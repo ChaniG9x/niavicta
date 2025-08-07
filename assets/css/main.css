@@ -2386,6 +2386,28 @@ input, select, textarea {
 			margin-bottom: 3em;
 		}
 
+/* Header video background */
+#header-wrapper {
+    background: none;
+    overflow: hidden;
+}
+
+#header-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+#header-wrapper > .container,
+#header-wrapper > section {
+    position: relative;
+    z-index: 1;
+}
+
 /* Copyright */
 
 	#copyright {

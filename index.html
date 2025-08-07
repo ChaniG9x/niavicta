@@ -18,6 +18,48 @@
       form input, form textarea {
         color: #000;
       }
+
+      /* New styles for video banner */
+      #promo-wrapper {
+        position: relative;
+        width: 100%;
+        height: 60vh;
+        overflow: hidden;
+      }
+
+      #promo-wrapper video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      #promo {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 4em 2em;
+      }
+
+      #promo h2 {
+        font-size: 2em;
+        margin-bottom: 1em;
+      }
+
+      #promo .button {
+        background-color: #ffffff;
+        color: #000;
+        border: none;
+        padding: 0.75em 1.5em;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 1em;
+      }
     </style>
   </head>
   <body class="homepage is-preload">
@@ -82,6 +124,12 @@
 
       <!-- Promo -->
       <div id="promo-wrapper">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline>
+          <source src="videos/banner_vid.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <!-- Overlay Text -->
         <section id="promo">
           <h2>Empowering nurses with better tools means better care.</h2>
           <a href="#contact" class="button">Join our pilot program</a>
@@ -180,4 +228,3 @@
     <script src="assets/js/main.js"></script>
   </body>
 </html>
-

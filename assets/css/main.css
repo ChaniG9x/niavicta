@@ -2111,14 +2111,15 @@ input, select, textarea {
 		background-size: 128px 128px, 100% 100%, auto;
 	}
 
-	#promo-wrapper {
-		position: relative;
-		background-image: url("images/overlay.png"), url("../../images/promo.jpg");
-		background-size: 192px 192px, cover;
-		background-position: top left, center center;
-		color: #fff;
-		text-align: center;
-		padding: 6em 0 6em 0;
+	#promo {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  z-index: 1;
+	  color: white;
+	  text-align: center;
+	  padding: 2em;
 	}
 
 	#footer-wrapper {

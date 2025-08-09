@@ -3125,14 +3125,14 @@ input, select, textarea {
 
 	}
 
-/* Uniform size for Features images */
-#features .image-wrapper img.image.featured,
-#features img.image.featured {
-  width: 100% !important;
-  height: 260px !important;  /* change to the height you want */
-  object-fit: cover !important;
-  display: block;
-}
+			/* Force uniform size for all images inside the Features grid */
+			#features .image.featured {
+			  display: block;
+			  width: 100%;
+			  height: 260px;      /* change this if you want taller/shorter */
+			  object-fit: cover;  /* fill the box without distortion */
+			}
+			
 			/* Responsive tweaks so images are not too tall on smaller screens */
 			@media (max-width: 1080px) {
 			  #features .image.featured { height: 220px; }
@@ -3143,4 +3143,3 @@ input, select, textarea {
 			@media (max-width: 480px) {
 			  #features .image.featured { height: 160px; }
 			}
-

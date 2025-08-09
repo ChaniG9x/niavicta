@@ -61,11 +61,12 @@
         margin-top: 1em;
       }
 
-      /* Carousel styles */
-      #features .carousel {
-        position: relative;
-        overflow: hidden;
-      }
+      /* Carousel styles */␊
+      #features .carousel {␊
+        position: relative;␊
+        overflow: hidden;␊
+      }␊
+
 
       #features .carousel-track {
         display: flex;
@@ -142,6 +143,29 @@
       #features .carousel-dot:focus {
         outline: 2px solid #000;
       }
+
+      /* --- Remove striped background in Features wrapper (HTML5 UP override) --- */
+      #features.wrapper,
+      #features.wrapper:before,
+      #features .container:before {
+        background: none !important;
+      }
+      #features.wrapper:before { display: none !important; }
+
+      /* Optional: solid background behind cards */
+      #features { background-color: #ffffff; }
+
+      /* Ensure carousel can use full width inside the container */
+      #features .container { max-width: 1200px; }
+
+      /* --- Carousel: force 3-up on desktop, 2-up tablet, 1-up mobile --- */
+      .features-carousel .slide { flex: 0 0 100%; }           /* default = 1 */
+      @media (min-width: 700px) {
+        .features-carousel .slide { flex-basis: 50%; }        /* tablet = 2 */
+      }
+      @media (min-width: 1024px) {
+        .features-carousel .slide { flex-basis: 33.3333%; }   /* desktop = 3 */
+      }
     </style>
   </head>
   </head>
@@ -191,9 +215,9 @@
       <!-- Features -->
       <div id="features" class="wrapper">
         <div class="container">
-          <div class="carousel" aria-label="Features carousel" tabindex="0">
+          <div class="carousel features-carousel" aria-label="Features carousel" tabindex="0">
             <div class="carousel-track">
-              <div class="carousel-slide">
+              <div class="carousel-slide slide">
                 <section class="feature">
                   <div class="image-wrapper first">
                     <img src="images/pic01.jpg" alt="Feature 1" class="image featured first" />
@@ -202,7 +226,7 @@
                   <p>Capture vital signs, medications, and observations directly at the point of care.</p>
                 </section>
               </div>
-              <div class="carousel-slide">
+              <div class="carousel-slide slide">
                 <section class="feature">
                   <div class="image-wrapper">
                     <img src="images/pic02.jpg" alt="Feature 2" class="image featured" />
@@ -211,7 +235,7 @@
                   <p>All entries sync to the central record system (EHR/EMR), helping reduce duplication, errors, and time spent documenting.</p>
                 </section>
               </div>
-              <div class="carousel-slide">
+              <div class="carousel-slide slide">
                 <section class="feature">
                   <div class="image-wrapper">
                     <img src="images/pic03.jpg" alt="On-the-Ward Usability" class="image featured" />
@@ -220,7 +244,7 @@
                   <p>We’re shaping every screen and button based on how nurses actually work – even during shift changes, emergencies, or power cuts.</p>
                 </section>
               </div>
-              <div class="carousel-slide">
+              <div class="carousel-slide slide">
                 <section class="feature">
                   <div class="image-wrapper">
                     <img src="images/pic04.jpg" alt="Training &amp; Facilitation Included" class="image featured" />
@@ -229,7 +253,7 @@
                   <p>No manuals, no confusion. Simple onboarding supported by local facilitators who understand the workflow, and hands-on guidance to get started with confidence.</p>
                 </section>
               </div>
-              <div class="carousel-slide">
+              <div class="carousel-slide slide">
                 <section class="feature">
                   <div class="image-wrapper">
                     <img src="images/pic05.jpg" alt="Offline-First, Always Reliable" class="image featured" />
@@ -238,7 +262,7 @@
                   <p>No Wi-Fi? No problem. The device will store everything safely and sync automatically once it reconnects – giving nurses peace of mind.</p>
                 </section>
               </div>
-              <div class="carousel-slide">
+              <div class="carousel-slide slide">
                 <section class="feature">
                   <div class="image-wrapper">
                     <img src="images/pic01.jpg" alt="Fast Handover Mode" class="image featured" />
@@ -247,7 +271,7 @@
                     <p>A simplified, time-stamped view of recent care activities – designed to help with safe and quick patient handovers between shifts.</p>
                 </section>
               </div>
-              <div class="carousel-slide">
+              <div class="carousel-slide slide">
                 <section class="feature">
                   <div class="image-wrapper">
                     <img src="images/pic02.jpg" alt="Multilingual &amp; Icon-Based Interface" class="image featured" />
@@ -256,7 +280,7 @@
                   <p>Designed with clear icons and optional local language support to ensure ease of use for everyone, regardless of digital experience.</p>
                 </section>
               </div>
-              <div class="carousel-slide">
+              <div class="carousel-slide slide">
                 <section class="feature">
                   <div class="image-wrapper">
                     <img src="images/pic03.jpg" alt="Privacy &amp; Security by Default" class="image featured" />
@@ -378,74 +402,69 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const carousel = document.querySelector('#features .carousel');
+   document.addEventListener('DOMContentLoaded', function () {
+        const carousel = document.querySelector('#features .features-carousel');
+        if (!carousel) return;
         const track = carousel.querySelector('.carousel-track');
         const slides = Array.from(track.children);
         const prevButton = carousel.querySelector('.carousel-button.prev');
         const nextButton = carousel.querySelector('.carousel-button.next');
         const dotsNav = carousel.querySelector('.carousel-dots');
+        const viewport = carousel;
 
-        const firstClone = slides[0].cloneNode(true);
-        const lastClone = slides[slides.length - 1].cloneNode(true);
-        track.appendChild(firstClone);
-        track.insertBefore(lastClone, slides[0]);
+        function slidesPerView() {
+          const w = viewport.clientWidth;
+          if (w >= 1024) return 3; // desktop
+          if (w >= 700) return 2;  // tablet
+          return 1;                // mobile
+        }
 
-        const allSlides = Array.from(track.children);
-        let currentIndex = 1;
+        let perView = slidesPerView();
+        let pageCount = Math.ceil(slides.length / perView);
+        let currentPage = 0;
         let autoPlayId;
 
-        function setPosition() {
-          track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        function buildDots() {
+          dotsNav.innerHTML = '';
+          perView = slidesPerView();
+          pageCount = Math.ceil(slides.length / perView);
+          for (let i = 0; i < pageCount; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot';
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            if (i === currentPage) dot.classList.add('active');
+            dotsNav.appendChild(dot);
+          }
         }
 
         function updateDots() {
           const dots = Array.from(dotsNav.children);
-          dots.forEach((dot) => dot.classList.remove('active'));
-          let dotIndex = currentIndex - 1;
-          if (currentIndex === 0) dotIndex = slides.length - 1;
-          if (currentIndex === allSlides.length - 1) dotIndex = 0;
-          dots[dotIndex].classList.add('active');
+          dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentPage);
+          });
         }
 
-        slides.forEach((_, idx) => {
-          const dot = document.createElement('button');
-          dot.className = 'carousel-dot';
-          dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
-          if (idx === 0) dot.classList.add('active');
-          dotsNav.appendChild(dot);
-        });
-
-        function moveToSlide(index) {
+        function moveToPage(page) {
+          const width = viewport.clientWidth;
+          const maxOffset = track.scrollWidth - width;
+          currentPage = page;
+          let offset = width * currentPage;
+          if (offset > maxOffset) offset = maxOffset;
           track.style.transition = 'transform 0.5s ease-in-out';
-          currentIndex = index;
-          setPosition();
-        }
-
-        function nextSlide() {
-          moveToSlide(currentIndex + 1);
-        }
-
-        function prevSlide() {
-          moveToSlide(currentIndex - 1);
-        }
-
-        track.addEventListener('transitionend', () => {
-          if (allSlides[currentIndex] === firstClone) {
-            track.style.transition = 'none';
-            currentIndex = 1;
-            setPosition();
-          }
-          if (allSlides[currentIndex] === lastClone) {
-            track.style.transition = 'none';
-            currentIndex = slides.length;
-            setPosition();
-          }
+          track.style.transform = `translateX(-${offset}px)`;
           updateDots();
-        });
+        }
+
+        function nextPage() {
+          moveToPage((currentPage + 1) % pageCount);
+        }
+
+        function prevPage() {
+          moveToPage((currentPage - 1 + pageCount) % pageCount);
+        }
 
         function startAutoPlay() {
-          autoPlayId = setInterval(nextSlide, 5000);
+          autoPlayId = setInterval(nextPage, 5000);
         }
 
         function stopAutoPlay() {
@@ -458,12 +477,12 @@
         }
 
         nextButton.addEventListener('click', () => {
-          nextSlide();
+          nextPage();
           restartAutoPlay();
         });
 
         prevButton.addEventListener('click', () => {
-          prevSlide();
+          prevPage();
           restartAutoPlay();
         });
 
@@ -471,7 +490,7 @@
           if (!e.target.matches('button')) return;
           const dots = Array.from(dotsNav.children);
           const idx = dots.indexOf(e.target);
-          moveToSlide(idx + 1);
+          moveToPage(idx);
           restartAutoPlay();
         });
 
@@ -486,34 +505,15 @@
           }
         });
 
-        carousel.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowRight') {
-            nextSlide();
-            restartAutoPlay();
-          } else if (e.key === 'ArrowLeft') {
-            prevSlide();
-            restartAutoPlay();
-          }
+        window.addEventListener('resize', () => {
+          buildDots();
+          if (currentPage >= pageCount) currentPage = pageCount - 1;
+          moveToPage(currentPage);
         });
 
-        let startX = 0;
-        carousel.addEventListener('touchstart', (e) => {
-          startX = e.touches[0].clientX;
-        }, { passive: true });
-
-        carousel.addEventListener('touchend', (e) => {
-          const endX = e.changedTouches[0].clientX;
-          if (endX - startX > 50) {
-            prevSlide();
-            restartAutoPlay();
-          } else if (startX - endX > 50) {
-            nextSlide();
-            restartAutoPlay();
-          }
-        }, { passive: true });
-
         function init() {
-          setPosition();
+          buildDots();
+          moveToPage(0);
           startAutoPlay();
         }
 
@@ -522,6 +522,7 @@
     </script>
   </body>
 </html>
+
 
 
 

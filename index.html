@@ -60,7 +60,90 @@
         display: inline-block;
         margin-top: 1em;
       }
+
+      /* Carousel styles */
+      #features .carousel {
+        position: relative;
+        overflow: hidden;
+      }
+
+      #features .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      #features .carousel-slide {
+        min-width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        padding: 2rem 1rem;
+      }
+
+      #features .carousel-slide .feature {
+        background: #ffffff;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        text-align: center;
+        max-width: 600px;
+      }
+
+      #features .carousel-slide img {
+        border-radius: 0.5rem;
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+
+      #features .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        padding: 0.5rem 0.75rem;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      #features .carousel-button.prev {
+        left: 1rem;
+      }
+
+      #features .carousel-button.next {
+        right: 1rem;
+      }
+
+      #features .carousel-button:focus {
+        outline: 2px solid #000;
+      }
+
+      #features .carousel-dots {
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      #features .carousel-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        margin: 0 0.25rem;
+        background: #ccc;
+        cursor: pointer;
+      }
+
+      #features .carousel-dot.active {
+        background: #333;
+      }
+
+      #features .carousel-dot:focus {
+        outline: 2px solid #000;
+      }
     </style>
+  </head>
   </head>
   <body class="homepage is-preload">
     <div id="page-wrapper">
@@ -108,63 +191,84 @@
       <!-- Features -->
       <div id="features" class="wrapper">
         <div class="container">
-          <div class="row">
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper first">
-                <img src="images/pic01.jpg" alt="Feature 1" class="image featured first" />
+          <div class="carousel" aria-label="Features carousel" tabindex="0">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <section class="feature">
+                  <div class="image-wrapper first">
+                    <img src="images/pic01.jpg" alt="Feature 1" class="image featured first" />
+                  </div>
+                  <header><h2>Real-Time Bedside Notes</h2></header>
+                  <p>Capture vital signs, medications, and observations directly at the point of care.</p>
+                </section>
               </div>
-              <header><h2>Real-Time Bedside Notes</h2></header>
-              <p>Capture vital signs, medications, and observations directly at the point of care.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic02.jpg" alt="Feature 2" class="image featured" />
+              <div class="carousel-slide">
+                <section class="feature">
+                  <div class="image-wrapper">
+                    <img src="images/pic02.jpg" alt="Feature 2" class="image featured" />
+                  </div>
+                  <header><h2>Secure Sync</h2></header>
+                  <p>All entries sync to the central record system (EHR/EMR), helping reduce duplication, errors, and time spent documenting.</p>
+                </section>
               </div>
-              <header><h2>Secure Sync</h2></header>
-              <p>All entries sync to the central record system (EHR/EMR), helping reduce duplication, errors, and time spent documenting.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic03.jpg" alt="On-the-Ward Usability" class="image featured" />
+              <div class="carousel-slide">
+                <section class="feature">
+                  <div class="image-wrapper">
+                    <img src="images/pic03.jpg" alt="On-the-Ward Usability" class="image featured" />
+                  </div>
+                  <header><h2>On-the-Ward Usability</h2></header>
+                  <p>We’re shaping every screen and button based on how nurses actually work – even during shift changes, emergencies, or power cuts.</p>
+                </section>
               </div>
-              <header><h2>On-the-Ward Usability</h2></header>
-              <p>We’re shaping every screen and button based on how nurses actually work – even during shift changes, emergencies, or power cuts.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic04.jpg" alt="Training &amp; Facilitation Included" class="image featured" />
+              <div class="carousel-slide">
+                <section class="feature">
+                  <div class="image-wrapper">
+                    <img src="images/pic04.jpg" alt="Training &amp; Facilitation Included" class="image featured" />
+                  </div>
+                  <header><h2>Training &amp; Facilitation Included</h2></header>
+                  <p>No manuals, no confusion. Simple onboarding supported by local facilitators who understand the workflow, and hands-on guidance to get started with confidence.</p>
+                </section>
               </div>
-              <header><h2>Training &amp; Facilitation Included</h2></header>
-              <p>No manuals, no confusion. Simple onboarding supported by local facilitators who understand the workflow, and hands-on guidance to get started with confidence.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic05.jpg" alt="Offline-First, Always Reliable" class="image featured" />
+              <div class="carousel-slide">
+                <section class="feature">
+                  <div class="image-wrapper">
+                    <img src="images/pic05.jpg" alt="Offline-First, Always Reliable" class="image featured" />
+                  </div>
+                  <header><h2>Offline-First, Always Reliable</h2></header>
+                  <p>No Wi-Fi? No problem. The device will store everything safely and sync automatically once it reconnects – giving nurses peace of mind.</p>
+                </section>
               </div>
-              <header><h2>Offline-First, Always Reliable</h2></header>
-              <p>No Wi-Fi? No problem. The device will store everything safely and sync automatically once it reconnects – giving nurses peace of mind.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic01.jpg" alt="Fast Handover Mode" class="image featured" />
+              <div class="carousel-slide">
+                <section class="feature">
+                  <div class="image-wrapper">
+                    <img src="images/pic01.jpg" alt="Fast Handover Mode" class="image featured" />
+                  </div>
+                    <header><h2>Fast Handover Mode</h2></header>
+                    <p>A simplified, time-stamped view of recent care activities – designed to help with safe and quick patient handovers between shifts.</p>
+                </section>
               </div>
-              <header><h2>Fast Handover Mode</h2></header>
-              <p>A simplified, time-stamped view of recent care activities – designed to help with safe and quick patient handovers between shifts.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic02.jpg" alt="Multilingual &amp; Icon-Based Interface" class="image featured" />
+              <div class="carousel-slide">
+                <section class="feature">
+                  <div class="image-wrapper">
+                    <img src="images/pic02.jpg" alt="Multilingual &amp; Icon-Based Interface" class="image featured" />
+                  </div>
+                  <header><h2>Multilingual &amp; Icon-Based Interface</h2></header>
+                  <p>Designed with clear icons and optional local language support to ensure ease of use for everyone, regardless of digital experience.</p>
+                </section>
               </div>
-              <header><h2>Multilingual &amp; Icon-Based Interface</h2></header>
-              <p>Designed with clear icons and optional local language support to ensure ease of use for everyone, regardless of digital experience.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic03.jpg" alt="Privacy &amp; Security by Default" class="image featured" />
+              <div class="carousel-slide">
+                <section class="feature">
+                  <div class="image-wrapper">
+                    <img src="images/pic03.jpg" alt="Privacy &amp; Security by Default" class="image featured" />
+                  </div>
+                  <header><h2>Privacy &amp; Security by Default</h2></header>
+                  <p>Sensitive data is encrypted, securely stored, and protected with access controls that make sense in busy hospital environments.</p>
+                </section>
               </div>
-              <header><h2>Privacy &amp; Security by Default</h2></header>
-              <p>Sensitive data is encrypted, securely stored, and protected with access controls that make sense in busy hospital environments.</p>
-            </section>
+            </div>
+            <button class="carousel-button prev" aria-label="Previous feature">&#10094;</button>
+            <button class="carousel-button next" aria-label="Next feature">&#10095;</button>
+            <div class="carousel-dots"></div>
           </div>
         </div>
       </div>
@@ -179,7 +283,7 @@
         <!-- Overlay Text -->
         <section id="promo">
           <h2>Empowering nurses with better tools means better care.</h2>
-          <a href="#contact" class="button">Join our pilot program</a>
+          <a href="#contact" class="button">Join our pilot program waitlist</a>
         </section>
       </div>
 
@@ -273,6 +377,149 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const carousel = document.querySelector('#features .carousel');
+        const track = carousel.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const prevButton = carousel.querySelector('.carousel-button.prev');
+        const nextButton = carousel.querySelector('.carousel-button.next');
+        const dotsNav = carousel.querySelector('.carousel-dots');
+
+        const firstClone = slides[0].cloneNode(true);
+        const lastClone = slides[slides.length - 1].cloneNode(true);
+        track.appendChild(firstClone);
+        track.insertBefore(lastClone, slides[0]);
+
+        const allSlides = Array.from(track.children);
+        let currentIndex = 1;
+        let autoPlayId;
+
+        function setPosition() {
+          track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function updateDots() {
+          const dots = Array.from(dotsNav.children);
+          dots.forEach((dot) => dot.classList.remove('active'));
+          let dotIndex = currentIndex - 1;
+          if (currentIndex === 0) dotIndex = slides.length - 1;
+          if (currentIndex === allSlides.length - 1) dotIndex = 0;
+          dots[dotIndex].classList.add('active');
+        }
+
+        slides.forEach((_, idx) => {
+          const dot = document.createElement('button');
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+          if (idx === 0) dot.classList.add('active');
+          dotsNav.appendChild(dot);
+        });
+
+        function moveToSlide(index) {
+          track.style.transition = 'transform 0.5s ease-in-out';
+          currentIndex = index;
+          setPosition();
+        }
+
+        function nextSlide() {
+          moveToSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+          moveToSlide(currentIndex - 1);
+        }
+
+        track.addEventListener('transitionend', () => {
+          if (allSlides[currentIndex] === firstClone) {
+            track.style.transition = 'none';
+            currentIndex = 1;
+            setPosition();
+          }
+          if (allSlides[currentIndex] === lastClone) {
+            track.style.transition = 'none';
+            currentIndex = slides.length;
+            setPosition();
+          }
+          updateDots();
+        });
+
+        function startAutoPlay() {
+          autoPlayId = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoPlay() {
+          clearInterval(autoPlayId);
+        }
+
+        function restartAutoPlay() {
+          stopAutoPlay();
+          startAutoPlay();
+        }
+
+        nextButton.addEventListener('click', () => {
+          nextSlide();
+          restartAutoPlay();
+        });
+
+        prevButton.addEventListener('click', () => {
+          prevSlide();
+          restartAutoPlay();
+        });
+
+        dotsNav.addEventListener('click', (e) => {
+          if (!e.target.matches('button')) return;
+          const dots = Array.from(dotsNav.children);
+          const idx = dots.indexOf(e.target);
+          moveToSlide(idx + 1);
+          restartAutoPlay();
+        });
+
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', restartAutoPlay);
+
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            stopAutoPlay();
+          } else {
+            restartAutoPlay();
+          }
+        });
+
+        carousel.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight') {
+            nextSlide();
+            restartAutoPlay();
+          } else if (e.key === 'ArrowLeft') {
+            prevSlide();
+            restartAutoPlay();
+          }
+        });
+
+        let startX = 0;
+        carousel.addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', (e) => {
+          const endX = e.changedTouches[0].clientX;
+          if (endX - startX > 50) {
+            prevSlide();
+            restartAutoPlay();
+          } else if (startX - endX > 50) {
+            nextSlide();
+            restartAutoPlay();
+          }
+        }, { passive: true });
+
+        function init() {
+          setPosition();
+          startAutoPlay();
+        }
+
+        init();
+      });
+    </script>
   </body>
 </html>
 

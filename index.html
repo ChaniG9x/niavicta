@@ -60,113 +60,7 @@
         display: inline-block;
         margin-top: 1em;
       }
-
-      /* Carousel styles */␊
-      #features .carousel {␊
-        position: relative;␊
-        overflow: hidden;␊
-      }␊
-
-
-      #features .carousel-track {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-      }
-
-      #features .carousel-slide {
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        padding: 2rem 1rem;
-      }
-
-      #features .carousel-slide .feature {
-        background: #ffffff;
-        border-radius: 0.5rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        padding: 1.5rem;
-        text-align: center;
-        max-width: 600px;
-      }
-
-      #features .carousel-slide img {
-        border-radius: 0.5rem;
-        width: 100%;
-        height: auto;
-        margin-bottom: 1rem;
-      }
-
-      #features .carousel-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.8);
-        border: none;
-        padding: 0.5rem 0.75rem;
-        cursor: pointer;
-        border-radius: 50%;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      }
-
-      #features .carousel-button.prev {
-        left: 1rem;
-      }
-
-      #features .carousel-button.next {
-        right: 1rem;
-      }
-
-      #features .carousel-button:focus {
-        outline: 2px solid #000;
-      }
-
-      #features .carousel-dots {
-        text-align: center;
-        margin-top: 1rem;
-      }
-
-      #features .carousel-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        border: none;
-        margin: 0 0.25rem;
-        background: #ccc;
-        cursor: pointer;
-      }
-
-      #features .carousel-dot.active {
-        background: #333;
-      }
-
-      #features .carousel-dot:focus {
-        outline: 2px solid #000;
-      }
-
-      /* --- Remove striped background in Features wrapper (HTML5 UP override) --- */
-      #features.wrapper,
-      #features.wrapper:before,
-      #features .container:before {
-        background: none !important;
-      }
-      #features.wrapper:before { display: none !important; }
-
-      /* Optional: solid background behind cards */
-      #features { background-color: #ffffff; }
-
-      /* Ensure carousel can use full width inside the container */
-      #features .container { max-width: 1200px; }
-
-      /* --- Carousel: force 4-up on desktop, 2-up tablet, 1-up mobile --- */
-      .features-carousel .slide { flex: 0 0 100%; }           /* default = 1 */␊
-      @media (min-width: 700px) {␊
-        .features-carousel .slide { flex-basis: 50%; }        /* tablet = 2 */␊
-      }␊
-      @media (min-width: 1024px) {␊
-        .features-carousel .slide { flex-basis: 25%; }        /* desktop = 4 */
-      }␊
     </style>
-  </head>
   </head>
   <body class="homepage is-preload">
     <div id="page-wrapper">
@@ -214,84 +108,63 @@
       <!-- Features -->
       <div id="features" class="wrapper">
         <div class="container">
-          <div class="carousel features-carousel" aria-label="Features carousel" tabindex="0">
-            <div class="carousel-track">
-              <div class="carousel-slide slide">
-                <section class="feature">
-                  <div class="image-wrapper first">
-                    <img src="images/pic01.jpg" alt="Feature 1" class="image featured first" />
-                  </div>
-                  <header><h2>Real-Time Bedside Notes</h2></header>
-                  <p>Capture vital signs, medications, and observations directly at the point of care.</p>
-                </section>
+          <div class="row">
+            <section class="col-4 col-12-narrower feature">
+              <div class="image-wrapper first">
+                <img src="images/pic01.jpg" alt="Feature 1" class="image featured first" />
               </div>
-              <div class="carousel-slide slide">
-                <section class="feature">
-                  <div class="image-wrapper">
-                    <img src="images/pic02.jpg" alt="Feature 2" class="image featured" />
-                  </div>
-                  <header><h2>Secure Sync</h2></header>
-                  <p>All entries sync to the central record system (EHR/EMR), helping reduce duplication, errors, and time spent documenting.</p>
-                </section>
+              <header><h2>Real-Time Bedside Notes</h2></header>
+              <p>Capture vital signs, medications, and observations directly at the point of care.</p>
+            </section>
+            <section class="col-4 col-12-narrower feature">
+              <div class="image-wrapper">
+                <img src="images/pic02.jpg" alt="Feature 2" class="image featured" />
               </div>
-              <div class="carousel-slide slide">
-                <section class="feature">
-                  <div class="image-wrapper">
-                    <img src="images/pic03.jpg" alt="On-the-Ward Usability" class="image featured" />
-                  </div>
-                  <header><h2>On-the-Ward Usability</h2></header>
-                  <p>We’re shaping every screen and button based on how nurses actually work – even during shift changes, emergencies, or power cuts.</p>
-                </section>
+              <header><h2>Secure Sync</h2></header>
+              <p>All entries sync to the central record system (EHR/EMR), helping reduce duplication, errors, and time spent documenting.</p>
+            </section>
+            <section class="col-4 col-12-narrower feature">
+              <div class="image-wrapper">
+                <img src="images/pic03.jpg" alt="On-the-Ward Usability" class="image featured" />
               </div>
-              <div class="carousel-slide slide">
-                <section class="feature">
-                  <div class="image-wrapper">
-                    <img src="images/pic04.jpg" alt="Training &amp; Facilitation Included" class="image featured" />
-                  </div>
-                  <header><h2>Training &amp; Facilitation Included</h2></header>
-                  <p>No manuals, no confusion. Simple onboarding supported by local facilitators who understand the workflow, and hands-on guidance to get started with confidence.</p>
-                </section>
+              <header><h2>On-the-Ward Usability</h2></header>
+              <p>We’re shaping every screen and button based on how nurses actually work – even during shift changes, emergencies, or power cuts.</p>
+            </section>
+            <section class="col-4 col-12-narrower feature">
+              <div class="image-wrapper">
+                <img src="images/pic04.jpg" alt="Training &amp; Facilitation Included" class="image featured" />
               </div>
-              <div class="carousel-slide slide">
-                <section class="feature">
-                  <div class="image-wrapper">
-                    <img src="images/pic05.jpg" alt="Offline-First, Always Reliable" class="image featured" />
-                  </div>
-                  <header><h2>Offline-First, Always Reliable</h2></header>
-                  <p>No Wi-Fi? No problem. The device will store everything safely and sync automatically once it reconnects – giving nurses peace of mind.</p>
-                </section>
+              <header><h2>Training &amp; Facilitation Included</h2></header>
+              <p>No manuals, no confusion. Simple onboarding supported by local facilitators who understand the workflow, and hands-on guidance to get started with confidence.</p>
+            </section>
+            <section class="col-4 col-12-narrower feature">
+              <div class="image-wrapper">
+                <img src="images/pic05.jpg" alt="Offline-First, Always Reliable" class="image featured" />
               </div>
-              <div class="carousel-slide slide">
-                <section class="feature">
-                  <div class="image-wrapper">
-                    <img src="images/pic01.jpg" alt="Fast Handover Mode" class="image featured" />
-                  </div>
-                    <header><h2>Fast Handover Mode</h2></header>
-                    <p>A simplified, time-stamped view of recent care activities – designed to help with safe and quick patient handovers between shifts.</p>
-                </section>
+              <header><h2>Offline-First, Always Reliable</h2></header>
+              <p>No Wi-Fi? No problem. The device will store everything safely and sync automatically once it reconnects – giving nurses peace of mind.</p>
+            </section>
+            <section class="col-4 col-12-narrower feature">
+              <div class="image-wrapper">
+                <img src="images/pic01.jpg" alt="Fast Handover Mode" class="image featured" />
               </div>
-              <div class="carousel-slide slide">
-                <section class="feature">
-                  <div class="image-wrapper">
-                    <img src="images/pic02.jpg" alt="Multilingual &amp; Icon-Based Interface" class="image featured" />
-                  </div>
-                  <header><h2>Multilingual &amp; Icon-Based Interface</h2></header>
-                  <p>Designed with clear icons and optional local language support to ensure ease of use for everyone, regardless of digital experience.</p>
-                </section>
+              <header><h2>Fast Handover Mode</h2></header>
+              <p>A simplified, time-stamped view of recent care activities – designed to help with safe and quick patient handovers between shifts.</p>
+            </section>
+            <section class="col-4 col-12-narrower feature">
+              <div class="image-wrapper">
+                <img src="images/pic02.jpg" alt="Multilingual &amp; Icon-Based Interface" class="image featured" />
               </div>
-              <div class="carousel-slide slide">
-                <section class="feature">
-                  <div class="image-wrapper">
-                    <img src="images/pic03.jpg" alt="Privacy &amp; Security by Default" class="image featured" />
-                  </div>
-                  <header><h2>Privacy &amp; Security by Default</h2></header>
-                  <p>Sensitive data is encrypted, securely stored, and protected with access controls that make sense in busy hospital environments.</p>
-                </section>
+              <header><h2>Multilingual &amp; Icon-Based Interface</h2></header>
+              <p>Designed with clear icons and optional local language support to ensure ease of use for everyone, regardless of digital experience.</p>
+            </section>
+            <section class="col-4 col-12-narrower feature">
+              <div class="image-wrapper">
+                <img src="images/pic03.jpg" alt="Privacy &amp; Security by Default" class="image featured" />
               </div>
-            </div>
-            <button class="carousel-button prev" aria-label="Previous feature">&#10094;</button>
-            <button class="carousel-button next" aria-label="Next feature">&#10095;</button>
-            <div class="carousel-dots"></div>
+              <header><h2>Privacy &amp; Security by Default</h2></header>
+              <p>Sensitive data is encrypted, securely stored, and protected with access controls that make sense in busy hospital environments.</p>
+            </section>
           </div>
         </div>
       </div>
@@ -306,7 +179,7 @@
         <!-- Overlay Text -->
         <section id="promo">
           <h2>Empowering nurses with better tools means better care.</h2>
-          <a href="#contact" class="button">Join our pilot program waitlist</a>
+          <a href="#contact" class="button">Join our pilot program</a>
         </section>
       </div>
 
@@ -400,131 +273,8 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-   document.addEventListener('DOMContentLoaded', function () {
-        const carousel = document.querySelector('#features .features-carousel');
-        if (!carousel) return;
-        const track = carousel.querySelector('.carousel-track');
-        const slides = Array.from(track.children);
-        const prevButton = carousel.querySelector('.carousel-button.prev');
-        const nextButton = carousel.querySelector('.carousel-button.next');
-        const dotsNav = carousel.querySelector('.carousel-dots');
-        const viewport = carousel;
-
-        function slidesPerView() {␊
-          const w = viewport.clientWidth;␊
-          if (w >= 1024) return 4; // desktop
-          if (w >= 700) return 2;  // tablet␊
-          return 1;                // mobile␊
-        }␊
-
-        let perView = slidesPerView();
-        let pageCount = Math.ceil(slides.length / perView);
-        let currentPage = 0;
-        let autoPlayId;
-
-        function buildDots() {
-          dotsNav.innerHTML = '';
-          perView = slidesPerView();
-          pageCount = Math.ceil(slides.length / perView);
-          for (let i = 0; i < pageCount; i++) {
-            const dot = document.createElement('button');
-            dot.className = 'carousel-dot';
-            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-            if (i === currentPage) dot.classList.add('active');
-            dotsNav.appendChild(dot);
-          }
-        }
-
-        function updateDots() {
-          const dots = Array.from(dotsNav.children);
-          dots.forEach((dot, idx) => {
-            dot.classList.toggle('active', idx === currentPage);
-          });
-        }
-
-        function moveToPage(page) {
-          const width = viewport.clientWidth;
-          const maxOffset = track.scrollWidth - width;
-          currentPage = page;
-          let offset = width * currentPage;
-          if (offset > maxOffset) offset = maxOffset;
-          track.style.transition = 'transform 0.5s ease-in-out';
-          track.style.transform = `translateX(-${offset}px)`;
-          updateDots();
-        }
-
-        function nextPage() {
-          moveToPage((currentPage + 1) % pageCount);
-        }
-
-        function prevPage() {
-          moveToPage((currentPage - 1 + pageCount) % pageCount);
-        }
-
-        function startAutoPlay() {
-          autoPlayId = setInterval(nextPage, 5000);
-        }
-
-        function stopAutoPlay() {
-          clearInterval(autoPlayId);
-        }
-
-        function restartAutoPlay() {
-          stopAutoPlay();
-          startAutoPlay();
-        }
-
-        nextButton.addEventListener('click', () => {
-          nextPage();
-          restartAutoPlay();
-        });
-
-        prevButton.addEventListener('click', () => {
-          prevPage();
-          restartAutoPlay();
-        });
-
-        dotsNav.addEventListener('click', (e) => {
-          if (!e.target.matches('button')) return;
-          const dots = Array.from(dotsNav.children);
-          const idx = dots.indexOf(e.target);
-          moveToPage(idx);
-          restartAutoPlay();
-        });
-
-        carousel.addEventListener('mouseenter', stopAutoPlay);
-        carousel.addEventListener('mouseleave', restartAutoPlay);
-
-        document.addEventListener('visibilitychange', () => {
-          if (document.hidden) {
-            stopAutoPlay();
-          } else {
-            restartAutoPlay();
-          }
-        });
-
-        window.addEventListener('resize', () => {
-          buildDots();
-          if (currentPage >= pageCount) currentPage = pageCount - 1;
-          moveToPage(currentPage);
-        });
-
-        function init() {
-          buildDots();
-          moveToPage(0);
-          startAutoPlay();
-        }
-
-        init();
-      });
-    </script>
   </body>
 </html>
-
-
-
-
 
 
 

@@ -1,136 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bedside Documentation Device - Vision in Progress</title>
-    <link rel="stylesheet" href="styles.css">
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Niavicta - Bedside Documentation Device</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-        }
-        header, section, footer {
-            padding: 2rem;
-        }
-        header {
-            background: url('/images/pic01.jpg') no-repeat center/cover;
-            color: white;
-            text-align: center;
-        }
-        header img {
-            max-width: 200px;
-        }
-        header h1 {
-            font-size: 2rem;
-        }
-        .cta-btn {
-            display: inline-block;
-            background: #0077cc;
-            color: white;
-            padding: 0.8rem 1.2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 1rem;
-        }
-        .section-img {
-            max-width: 100%;
-            height: auto;
-            margin: 1rem 0;
-            border-radius: 8px;
-        }
-        footer {
-            background: #f4f4f4;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-        form input, form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        form input[type="submit"], form input[type="reset"] {
-            width: auto;
-            background: #0077cc;
-            color: #fff;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            cursor: pointer;
-        }
-        form input[type="reset"] {
-            background: #aaa;
-        }
+      #logo {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      form input, form textarea {
+        color: #000;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body class="homepage is-preload">
+    <div id="page-wrapper">
 
-<header>
-    <img src="/images/logo.png" alt="NIAVICTA Logo">
-    <h1>Bringing accurate bedside documentation to every nurse – without adding to their workload.</h1>
-    <p>Right now, paper charts and slow EHR access waste precious nurse time and leave dangerous gaps in patient records.</p>
-    <p><strong>We’re looking for partners, hospitals, and funders to help make this vision a reality.</strong></p>
-    <a href="#contact" class="cta-btn">Partner With Us</a>
-</header>
+      <!-- Header -->
+      <div id="header-wrapper">
+        <video autoplay muted loop playsinline>
+          <source src="videos/header_vid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div id="header" class="container">
 
-<section>
-    <h2>We understand the pressure nurses face</h2>
-    <p>We’ve seen how documentation burden leads to burnout and errors. That’s why we’re designing the Bedside Documentation Device (BDD) in close collaboration with healthcare workers – to cut documentation time in half, improve record accuracy, and give nurses more time for patients.</p>
-    <img src="/images/pic02.jpg" alt="Nurse at work" class="section-img">
-    <p><em>Currently in early development – seeking user needs research sites and funding support.</em></p>
-</section>
+          <!-- Logo -->
+          <h1 id="logo">
+            <a href="index.html">
+              <img src="images/logo.png" alt="NIAVICTA logo" style="height: 1em; vertical-align: middle;" />
+            </a>
+          </h1>
 
-<section>
-    <h2>How the BDD will work in your hospital</h2>
-    <ol>
-        <li>Install the BDD at every bedside.</li>
-        <li>Train staff in under 30 minutes.</li>
-        <li>Capture accurate patient records instantly, without leaving the patient’s side.</li>
-    </ol>
-    <img src="/images/pic03.jpg" alt="BDD concept" class="section-img">
-    <a href="#contact" class="cta-btn">Join the Pilot Program</a>
-</section>
-
-<section>
-    <h2>The impact we’re building toward</h2>
-    <p>Nurses spending more time with patients. Records always up-to-date. Care decisions made faster and with full confidence.</p>
-    <img src="/images/pic04.jpg" alt="Positive outcome" class="section-img">
-</section>
-
-<section>
-    <h2>The cost of doing nothing</h2>
-    <p>Without bedside documentation, records will remain incomplete, errors will persist, and staff burnout will keep rising.</p>
-    <img src="/images/pic05.jpg" alt="Hospital challenge" class="section-img">
-</section>
-
-<section id="contact">
-    <h2>Contact <img src="/images/logo.png" alt="NIAVICTA Logo" style="height:1em;vertical-align:middle;"></h2>
-    <p>Get in touch to learn more about our bedside documentation device and early access opportunities.</p>
-    <form method="POST" action="https://formsubmit.co/hello@niavicta.com">
-        <input type="hidden" name="_redirect" value="https://niavicta.com/thank-you.html">
-        <div>
-            <input name="name" placeholder="Your Name" type="text" required>
+          <!-- Nav -->
+          <nav id="nav">
+            <ul>
+              <li><a href="#vision">Vision</a></li>
+              <li><a href="#impact">Impact</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
         </div>
-        <div>
-            <input name="email" placeholder="Your Email" type="email" required>
-        </div>
-        <div>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-        </div>
-        <div>
-            <input type="submit" value="Send Message">
-            <input type="reset" value="Clear form">
-        </div>
-    </form>
-</section>
 
-<footer>
-    <p>&copy; 2025 <img src="/images/logo.png" alt="NIAVICTA Logo" style="height:1em;vertical-align:middle;">. All rights reserved.</p>
-</footer>
+        <!-- Hero -->
+        <section id="hero" class="container">
+          <header>
+            <h2>Bringing accurate bedside documentation to every nurse – without adding to their workload.</h2>
+          </header>
+          <p>Right now, paper charts and slow EHR access waste precious nurse time and leave dangerous gaps in patient records. 
+          <strong>We’re looking for partners, hospitals, and funders to help make this vision a reality.</strong></p>
+          <ul class="actions">
+            <li><a href="#contact" class="button">Partner With Us</a></li>
+          </ul>
+        </section>
+      </div>
 
-</body>
+      <!-- Vision Section -->
+      <div id="vision" class="wrapper">
+        <div class="container">
+          <header class="major">
+            <h2>We understand the pressure nurses face</h2>
+          </header>
+          <p>We’ve seen how documentation burden leads to burnout and errors. That’s why we’re designing the Bedside Documentation Device (BDD) in close collaboration with healthcare workers – to cut documentation time in half, improve record accuracy, and give nurses more time for patients.</p>
+          <p><em>Currently in early development – seeking user needs research sites and funding support.</em></p>
+        </div>
+      </div>
+
+      <!-- How It Works Section -->
+      <div class="wrapper">
+        <div class="container">
+          <header class="major">
+            <h2>How the BDD will work in your hospital</h2>
+          </header>
+          <ol>
+            <li>Install the BDD at every bedside.</li>
+            <li>Train staff in under 30 minutes.</li>
+            <li>Capture accurate patient records instantly, without leaving the patient’s side.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Promo - Join our Pilot -->
+      <div id="promo-wrapper">
+        <video autoplay muted loop playsinline>
+          <source src="videos/banner_vid.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <section id="promo">
+          <h2>Join our pilot program</h2>
+          <p>Help us shape the future of bedside documentation in South African public hospitals.</p>
+          <a href="#contact" class="button">Join Now</a>
+        </section>
+      </div>
+
+      <!-- Impact Section -->
+      <div id="impact" class="wrapper">
+        <div class="container">
+          <header class="major">
+            <h2>The impact we’re building toward</h2>
+          </header>
+          <p>Nurses spending more time with patients. Records always up-to-date. Care decisions made faster and with full confidence.</p>
+        </div>
+      </div>
+
+      <!-- Cost of Doing Nothing -->
+      <div class="wrapper">
+        <div class="container">
+          <header class="major">
+            <h2>The cost of doing nothing</h2>
+          </header>
+          <p>Without bedside documentation, records will remain incomplete, errors will persist, and staff burnout will keep rising.</p>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div id="contact" class="wrapper">
+        <div class="container">
+          <header class="major">
+            <h2>Contact <img src="images/logo.png" alt="NIAVICTA logo" style="height: 1em; vertical-align: middle;" /></h2>
+            <p>Get in touch to learn more about our bedside documentation device and early access opportunities.</p>
+          </header>
+          <form method="POST" action="https://formsubmit.co/hello@niavicta.com">
+            <input type="hidden" name="_redirect" value="https://niavicta.com/thank-you.html">
+            <div class="row gtr-50">
+              <div class="col-6 col-12-mobile">
+                <input name="name" placeholder="Your Name" type="text" required />
+              </div>
+              <div class="col-6 col-12-mobile">
+                <input name="email" placeholder="Your Email" type="email" required />
+              </div>
+              <div class="col-12">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+              </div>
+              <div class="col-12">
+                <ul class="actions">
+                  <li><input type="submit" value="Send Message" /></li>
+                  <li><input type="reset" value="Clear form" /></li>
+                </ul>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div id="footer-wrapper">
+        <div id="footer" class="container">
+          <header class="major">
+            <h2><img src="images/logo.png" alt="NIAVICTA logo" style="height: 1em; vertical-align: middle;"/></h2>
+            <p>Made for nurses. Built for impact.</p>
+          </header>
+          <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter">Twitter</a></li>
+            <li><a href="#" class="icon brands fa-facebook-f">Facebook</a></li>
+            <li><a href="#" class="icon brands fa-instagram">Instagram</a></li>
+          </ul>
+        </div>
+        <div id="copyright" class="container">
+          <ul class="menu">
+            <li>&copy; <img src="images/logo.png" alt="NIAVICTA logo" style="height: 1em; vertical-align: middle;" />. All rights reserved.</li>
+            <li>Design base: <a href="https://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

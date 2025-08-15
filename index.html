@@ -1,284 +1,136 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>Niavicta - Bedside Documentation Device</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedside Documentation Device - Vision in Progress</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-      #logo {
-        font-size: 2.4rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        max-width: 200px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      form input, form textarea {
-        color: #000;
-      }
-
-      /* New styles for video banner */
-      #promo-wrapper {
-        position: relative;
-        width: 100%;
-        height: 30vh;
-        overflow: hidden;
-      }
-
-      #promo-wrapper video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        min-width: 100%;
-        min-height: 100%;
-        object-fit: cover;
-        z-index: 0;
-      }
-
-      #promo {
-        position: relative;
-        z-index: 1;
-        color: white;
-        text-align: center;
-        padding: 4em 2em;
-      }
-
-      #promo h2 {
-        font-size: 2em;
-        margin-bottom: 1em;
-      }
-
-      #promo .button {
-        background-color: #ffffff;
-        color: #000;
-        border: none;
-        padding: 0.75em 1.5em;
-        font-weight: bold;
-        text-decoration: none;
-        display: inline-block;
-        margin-top: 1em;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header, section, footer {
+            padding: 2rem;
+        }
+        header {
+            background: url('/images/pic01.jpg') no-repeat center/cover;
+            color: white;
+            text-align: center;
+        }
+        header img {
+            max-width: 200px;
+        }
+        header h1 {
+            font-size: 2rem;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #0077cc;
+            color: white;
+            padding: 0.8rem 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        .section-img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+        footer {
+            background: #f4f4f4;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form input[type="submit"], form input[type="reset"] {
+            width: auto;
+            background: #0077cc;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+        }
+        form input[type="reset"] {
+            background: #aaa;
+        }
     </style>
-  </head>
-  <body class="homepage is-preload">
-    <div id="page-wrapper">
+</head>
+<body>
 
-      <!-- Header -->
-      <div id="header-wrapper">
-        <video autoplay muted loop playsinline>
-          <source src="videos/header_vid.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div id="header" class="container">
+<header>
+    <img src="/images/logo.png" alt="NIAVICTA Logo">
+    <h1>Bringing accurate bedside documentation to every nurse – without adding to their workload.</h1>
+    <p>Right now, paper charts and slow EHR access waste precious nurse time and leave dangerous gaps in patient records.</p>
+    <p><strong>We’re looking for partners, hospitals, and funders to help make this vision a reality.</strong></p>
+    <a href="#contact" class="cta-btn">Partner With Us</a>
+</header>
 
-          <!-- Logo -->
-          <h1 id="logo">
-            <a href="index.html">
-              <img src="images/logo.png" alt="NIAVICTA logo" style="height: 1em; vertical-align: middle;" />
-            </a>
-          </h1>
+<section>
+    <h2>We understand the pressure nurses face</h2>
+    <p>We’ve seen how documentation burden leads to burnout and errors. That’s why we’re designing the Bedside Documentation Device (BDD) in close collaboration with healthcare workers – to cut documentation time in half, improve record accuracy, and give nurses more time for patients.</p>
+    <img src="/images/pic02.jpg" alt="Nurse at work" class="section-img">
+    <p><em>Currently in early development – seeking user needs research sites and funding support.</em></p>
+</section>
 
-          <!-- Nav -->
-          <nav id="nav">
-            <ul>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#about">Why Niavicta</a></li>
-              <li><a href="about-us.html">About Us</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
+<section>
+    <h2>How the BDD will work in your hospital</h2>
+    <ol>
+        <li>Install the BDD at every bedside.</li>
+        <li>Train staff in under 30 minutes.</li>
+        <li>Capture accurate patient records instantly, without leaving the patient’s side.</li>
+    </ol>
+    <img src="/images/pic03.jpg" alt="BDD concept" class="section-img">
+    <a href="#contact" class="cta-btn">Join the Pilot Program</a>
+</section>
 
+<section>
+    <h2>The impact we’re building toward</h2>
+    <p>Nurses spending more time with patients. Records always up-to-date. Care decisions made faster and with full confidence.</p>
+    <img src="/images/pic04.jpg" alt="Positive outcome" class="section-img">
+</section>
+
+<section>
+    <h2>The cost of doing nothing</h2>
+    <p>Without bedside documentation, records will remain incomplete, errors will persist, and staff burnout will keep rising.</p>
+    <img src="/images/pic05.jpg" alt="Hospital challenge" class="section-img">
+</section>
+
+<section id="contact">
+    <h2>Contact <img src="/images/logo.png" alt="NIAVICTA Logo" style="height:1em;vertical-align:middle;"></h2>
+    <p>Get in touch to learn more about our bedside documentation device and early access opportunities.</p>
+    <form method="POST" action="https://formsubmit.co/hello@niavicta.com">
+        <input type="hidden" name="_redirect" value="https://niavicta.com/thank-you.html">
+        <div>
+            <input name="name" placeholder="Your Name" type="text" required>
         </div>
-
-        <!-- Hero -->
-        <section id="hero" class="container">
-          <header>
-            <h2>Digitizing care at the bedside.<br />
-            For nurses, by <img src="images/logo.png" alt="NIAVICTA logo" style="height: 1em; vertical-align: middle;" />.</h2>
-          </header>
-          <p>We build bedside documentation tools that reduce workload, improve patient records, and empower care teams.</p>
-          <ul class="actions">
-            <li><a href="#features" class="button">Explore Features</a></li>
-          </ul>
-        </section>
-      </div>
-
-      <!-- Features -->
-      <div id="features" class="wrapper">
-        <div class="container">
-          <div class="row">
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper first">
-                <img src="images/pic01.jpg" alt="Feature 1" class="image featured first" />
-              </div>
-              <header><h2>Real-Time Bedside Notes</h2></header>
-              <p>Capture vital signs, medications, and observations directly at the point of care.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic02.jpg" alt="Feature 2" class="image featured" />
-              </div>
-              <header><h2>Secure Sync</h2></header>
-              <p>All entries sync to the central record system (EHR/EMR), helping reduce duplication, errors, and time spent documenting.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic05.jpg" alt="On-the-Ward Usability" class="image featured" />
-              </div>
-              <header><h2>On-the-Ward Usability</h2></header>
-              <p>We’re shaping every screen and button based on how nurses actually work – even during shift changes, emergencies, or power cuts.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic09.jpg" alt="Training &amp; Facilitation Included" class="image featured" />
-              </div>
-              <header><h2>Training &amp; Facilitation Included</h2></header>
-              <p>No manuals, no confusion. Simple onboarding supported by local facilitators who understand the workflow, and hands-on guidance to get started with confidence.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic08.jpg" alt="Offline-First, Always Reliable" class="image featured" />
-              </div>
-              <header><h2>Offline-First, Always Reliable</h2></header>
-              <p>No Wi-Fi? No problem. The device will store everything safely and sync automatically once it reconnects – giving nurses peace of mind.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic12.jpg" alt="Fast Handover Mode" class="image featured" />
-              </div>
-              <header><h2>Fast Handover Mode</h2></header>
-              <p>A simplified, time-stamped view of recent care activities – designed to help with safe and quick patient handovers between shifts.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic11.jpg" alt="Multilingual &amp; Icon-Based Interface" class="image featured" />
-              </div>
-              <header><h2>Multilingual &amp; Icon-Based Interface</h2></header>
-              <p>Designed with clear icons and optional local language support to ensure ease of use for everyone, regardless of digital experience.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic03.jpg" alt="Privacy &amp; Security by Default" class="image featured" />
-              </div>
-              <header><h2>Privacy &amp; Security by Default</h2></header>
-              <p>Sensitive data is encrypted, securely stored, and protected with access controls that make sense in busy hospital environments.</p>
-            </section>
-          </div>
+        <div>
+            <input name="email" placeholder="Your Email" type="email" required>
         </div>
-      </div>
-
-      <!-- Promo -->
-      <div id="promo-wrapper">
-        <!-- Background Video -->
-        <video autoplay muted loop playsinline>
-          <source src="videos/banner_vid.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <!-- Overlay Text -->
-        <section id="promo">
-          <h2>Empowering nurses with better tools means better care.</h2>
-          <a href="#contact" class="button">Join our pilot program</a>
-        </section>
-      </div>
-
-      <!-- About -->
-      <div id="about" class="wrapper">
-        <section class="container">
-          <header class="major">
-            <h2>Why choose  <img src="images/logo.png" alt="NIAVICTA logo" style="height: 1em; vertical-align: middle;" />?</h2>
-            <p>Designed for real-world hospital environments – intuitive, durable, secure.</p>
-          </header>
-          <div class="row features">
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper first">
-                <img src="images/pic03.jpg" alt="Designed for Impact" class="image featured" />
-              </div>
-              <p>Built with nurses, not just for them.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic04.jpg" alt="Affordable Innovation" class="image featured" />
-              </div>
-              <p>Affordable for public hospitals, scalable for private systems.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-              <div class="image-wrapper">
-                <img src="images/pic05.jpg" alt="Ready for Deployment" class="image featured" />
-              </div>
-              <p>Offline-first, always reliable – even during power cuts or outages.</p>
-            </section>
-          </div>
-        </section>
-      </div>
-
-      <!-- Contact -->
-      <div id="contact" class="wrapper">
-        <div class="container">
-          <header class="major">
-            <h2>Contact <img src="images/logo.png" alt="NIAVICTA logo" style="height: 1em; vertical-align: middle;" /></h2>
-            <p>Get in touch to learn more about our bedside documentation device and early access opportunities.</p>
-          </header>
-          <form method="POST" action="https://formsubmit.co/hello@niavicta.com">
-            <input type="hidden" name="_redirect" value="https://niavicta.com/thank-you.html">
-            <div class="row gtr-50">
-              <div class="col-6 col-12-mobile">
-                <input name="name" placeholder="Your Name" type="text" required />
-              </div>
-              <div class="col-6 col-12-mobile">
-                <input name="email" placeholder="Your Email" type="email" required />
-              </div>
-              <div class="col-12">
-                <textarea name="message" placeholder="Your Message" required></textarea>
-              </div>
-              <div class="col-12">
-                <ul class="actions">
-                  <li><input type="submit" value="Send Message" /></li>
-                  <li><input type="reset" value="Clear form" /></li>
-                </ul>
-              </div>
-            </div>
-          </form>
+        <div>
+            <textarea name="message" placeholder="Your Message" required></textarea>
         </div>
-      </div>
-
-      <!-- Footer -->
-      <div id="footer-wrapper">
-        <div id="footer" class="container">
-          <header class="major">
-            <h2><img src="images/logo.png" alt="NIAVICTA logo" style="height: 1em; vertical-align: middle;"/></h2>
-            <p>Made for nurses. Built for impact.</p>
-          </header>
-          <ul class="icons">
-            <li><a href="#" class="icon brands fa-twitter">Twitter</a></li>
-            <li><a href="#" class="icon brands fa-facebook-f">Facebook</a></li>
-            <li><a href="#" class="icon brands fa-instagram">Instagram</a></li>
-          </ul>
+        <div>
+            <input type="submit" value="Send Message">
+            <input type="reset" value="Clear form">
         </div>
-        <div id="copyright" class="container">
-          <ul class="menu">
-            <li>&copy; <img src="images/logo.png" alt="NIAVICTA logo" style="height: 1em; vertical-align: middle;" />. All rights reserved.</li>
-            <li>Design base: <a href="https://html5up.net">HTML5 UP</a></li>
-          </ul>
-        </div>
-      </div>
+    </form>
+</section>
 
-    </div>
+<footer>
+    <p>&copy; 2025 <img src="/images/logo.png" alt="NIAVICTA Logo" style="height:1em;vertical-align:middle;">. All rights reserved.</p>
+</footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+</body>
 </html>
-
-
-
-
-
-
-

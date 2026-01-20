@@ -1,42 +1,75 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
+<html lang="en" class="scroll-smooth"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niavicta | Systems for Scalability</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Custom Hexagon Utilities */
+        .hex-bg {
+            background-color: #f3f6f8;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='40' viewBox='0 0 24 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40c5.523 0 10-4.477 10-10V10c0-5.523-4.477-10-10-10s-10 4.477-10 10v20c0 5.523 4.477 10 10 10z' fill='%231F3A5F' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .clip-hex {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .clip-hex-flat {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(135deg, #1F3A5F 0%, #4FB3A2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #1F3A5F 0%, #D6A24C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
-</head>
-<body class="bg-[#E6EBF0] text-[#5B6F82] antialiased selection:bg-[#4FB3A2] selection:text-white">
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style><link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap"><style id="all-fonts-style-font-newsreader">.font-newsreader { font-family: 'Newsreader', serif !important; }</style><link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style><link id="all-fonts-link-font-oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-oswald">.font-oswald { font-family: 'Oswald', sans-serif !important; }</style><link id="all-fonts-link-font-dm-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-dm-sans">.font-dm-sans { font-family: 'DM Sans', sans-serif !important; }</style><link id="all-fonts-link-font-cormorant" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-cormorant">.font-cormorant { font-family: 'Cormorant Garamond', serif !important; }</style></head>
+<body class="bg-[#F5F7FA] text-[#5B6F82] antialiased selection:bg-[#4FB3A2] selection:text-white overflow-x-hidden font-inter">
+
+    <!-- Enhanced Decorative Background Elements -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-[900px] h-[900px] bg-gradient-to-b from-[#4FB3A2]/10 to-transparent rounded-full blur-3xl opacity-40 -translate-y-1/2 translate-x-1/4"></div>
+        <div class="absolute bottom-0 left-0 w-[700px] h-[700px] bg-gradient-to-t from-[#D6A24C]/10 to-transparent rounded-full blur-3xl opacity-30 translate-y-1/3 -translate-x-1/4"></div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-[#E6EBF0]/90 backdrop-blur-md border-b border-[#1F3A5F]/10">
+    <nav class="fixed w-full z-50 bg-[#F5F7FA]/80 backdrop-blur-xl border-b border-[#1F3A5F]/5">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2">
-                    <div class="w-8 h-8 bg-[#1F3A5F] rounded flex items-center justify-center text-white">
-                        <i data-lucide="layers" class="w-5 h-5"></i>
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                    <div class="relative w-8 h-9 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[#4FB3A2] clip-hex transition-transform group-hover:rotate-180 duration-500"></div>
+                        <iconify-icon icon="solar:layers-linear" class="text-white text-lg relative z-10"></iconify-icon>
                     </div>
-                    <span class="text-[#1F3A5F] text-xl font-semibold tracking-tight">Niavicta</span>
+                    <span class="text-[#1F3A5F] text-lg font-semibold tracking-tight">Niavicta</span>
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#about" class="text-sm font-medium text-[#5B6F82] hover:text-[#1F3A5F] transition-colors">About</a>
-                    <a href="#services" class="text-sm font-medium text-[#5B6F82] hover:text-[#1F3A5F] transition-colors">Services</a>
-                    <a href="#approach" class="text-sm font-medium text-[#5B6F82] hover:text-[#1F3A5F] transition-colors">Approach</a>
-                    <a href="#vision" class="text-sm font-medium text-[#5B6F82] hover:text-[#1F3A5F] transition-colors">Vision</a>
+                <div class="hidden md:flex space-x-10 items-center">
+                    <a href="#about" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">About</a>
+                    <a href="#services" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">Services</a>
+                    <a href="#approach" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">Method</a>
+                    <a href="#vision" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">Vision</a>
                 </div>
 
                 <!-- CTA -->
                 <div class="hidden md:flex">
-                    <a href="#contact" class="bg-[#1F3A5F] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#1F3A5F]/90 transition-all shadow-sm">
-                        Start a conversation
+                    <a href="#contact" class="group relative inline-flex items-center gap-2 bg-[#4FB3A2] text-white pl-5 pr-4 py-2.5 text-xs font-semibold rounded-full hover:bg-[#3EA090] hover:shadow-lg hover:shadow-[#4FB3A2]/20 transition-all overflow-hidden">
+                        <span>Start a conversation</span>
+                        <iconify-icon icon="solar:arrow-right-linear" class="text-lg group-hover:translate-x-0.5 transition-transform"></iconify-icon>
                     </a>
                 </div>
             </div>
@@ -44,177 +77,252 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-40 pb-24 lg:pt-52 lg:pb-32 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F3A5F]/5 border border-[#1F3A5F]/10 text-[#1F3A5F] text-sm font-medium mb-8">
-                <span class="w-2 h-2 rounded-full bg-[#4FB3A2]"></span>
-                From chaos to clarity
+    <section class="lg:pt-52 lg:pb-32 overflow-hidden z-10 pt-40 pr-6 pb-24 pl-6 relative">
+        
+        <!-- Abstract Hex Grid Background for Hero -->
+        <div class="absolute top-0 right-0 -z-10 opacity-[0.04] text-[#1F3A5F]">
+            <svg width="600" height="600" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5" class="">
+                <path d="M10 10 L30 10 L40 27 L30 44 L10 44 L0 27 Z"></path>
+                <path d="M50 10 L70 10 L80 27 L70 44 L50 44 L40 27 Z"></path>
+                <path d="M30 44 L50 44 L60 61 L50 78 L30 78 L20 61 Z"></path>
+                <path d="M70 44 L90 44 L100 61 L90 78 L70 78 L60 61 Z"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            <div class="max-w-2xl">
+                
+                <h1 class="text-5xl lg:text-7xl font-semibold text-[#1F3A5F] tracking-tighter leading-[1.05] mb-8">
+                    Build the company <br class="hidden lg:block">you <span class="text-gradient">intended</span> to build.
+                </h1>
+                <p class="text-lg text-[#5B6F82] leading-relaxed max-w-lg mb-10 font-normal">
+                    We replace operational fragility with engineered systems. Avoid preventable failures by designing clear structures, quality workflows, and scalable operations.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="flex items-center justify-center gap-2 bg-[#1F3A5F] text-white px-8 py-3.5 rounded-lg text-sm font-semibold hover:bg-[#4FB3A2] transition-colors shadow-lg shadow-[#1F3A5F]/20 hover:shadow-[#4FB3A2]/30">
+                        <iconify-icon icon="solar:chat-round-dots-linear" class="text-lg"></iconify-icon>
+                        Discuss your operations
+                    </a>
+                    <a href="#services" class="flex items-center justify-center gap-2 bg-white text-[#4FB3A2] border border-[#4FB3A2]/20 px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-[#4FB3A2]/5 transition-colors">
+                        View services
+                    </a>
+                </div>
             </div>
-            <h1 class="text-5xl lg:text-7xl font-semibold text-[#1F3A5F] tracking-tight leading-[1.1] mb-8">
-                Build the company you <br class="hidden lg:block"/>intended to build.
-            </h1>
-            <p class="text-xl lg:text-2xl text-[#5B6F82] leading-relaxed max-w-2xl mx-auto mb-10 font-normal">
-                We help founders and leadership teams avoid preventable failures by designing clear structures, quality systems, and scalable operations.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contact" class="bg-[#4FB3A2] text-white px-8 py-4 rounded text-lg font-medium hover:bg-[#3EA090] transition-colors shadow-sm text-center">
-                    Discuss your operations
-                </a>
-                <a href="#services" class="bg-white text-[#1F3A5F] border border-[#1F3A5F]/20 px-8 py-4 rounded text-lg font-medium hover:bg-[#F8FAFC] transition-colors text-center">
-                    View our services
-                </a>
+
+            <!-- Hexagon Visualization -->
+            <div class="hidden lg:flex justify-center items-center relative h-[400px]">
+                <div class="w-full h-full relative">
+                    <!-- Central Node -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48">
+                        <div class="absolute inset-0 bg-white border-2 border-[#4FB3A2]/20 clip-hex shadow-2xl shadow-[#4FB3A2]/10 flex flex-col items-center justify-center z-20">
+                            <iconify-icon icon="solar:buildings-2-linear" class="text-5xl text-[#4FB3A2] mb-3"></iconify-icon>
+                            <span class="text-xs font-bold text-[#1F3A5F] tracking-tight uppercase">Core System</span>
+                        </div>
+                    </div>
+
+                    <!-- Satellite Nodes -->
+                    <div class="absolute top-[10%] left-[20%] w-24 h-24">
+                        <div class="absolute inset-0 bg-[#D6A24C]/10 border border-[#D6A24C]/30 clip-hex flex items-center justify-center z-10 animate-[bounce_3s_infinite]">
+                            <iconify-icon icon="solar:users-group-rounded-linear" class="text-2xl text-[#D6A24C]"></iconify-icon>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute bottom-[15%] right-[20%] w-28 h-28">
+                        <div class="absolute inset-0 bg-[#1F3A5F] clip-hex flex items-center justify-center z-10 shadow-lg shadow-[#1F3A5F]/20">
+                            <iconify-icon icon="solar:graph-up-linear" class="text-3xl text-[#4FB3A2]"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="absolute top-[20%] right-[10%] w-20 h-20">
+                         <div class="absolute inset-0 bg-white border-2 border-[#4FB3A2] clip-hex flex items-center justify-center shadow-lg shadow-[#4FB3A2]/10">
+                            <iconify-icon icon="solar:shield-check-linear" class="text-xl text-[#4FB3A2]"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <!-- Connecting Lines (SVG) -->
+                    <svg class="absolute inset-0 w-full h-full -z-10 pointer-events-none" style="overflow: visible;">
+                        <line x1="50%" y1="50%" x2="25%" y2="20%" stroke="#4FB3A2" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="4 4"></line>
+                        <line x1="50%" y1="50%" x2="75%" y2="80%" stroke="#4FB3A2" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="4 4"></line>
+                        <line x1="50%" y1="50%" x2="85%" y2="30%" stroke="#4FB3A2" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="4 4"></line>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Values / Principles Grid -->
-    <section class="py-16 border-y border-[#1F3A5F]/5 bg-white">
+    <!-- Principles Grid -->
+    <section class="py-16 border-y border-[#4FB3A2]/10 bg-white relative">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="flex flex-col gap-3">
-                    <div class="text-[#D6A24C] mb-2"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
-                    <h3 class="text-[#1F3A5F] font-medium text-lg">Prevention over firefighting</h3>
-                    <p class="text-[#5B6F82] text-base leading-relaxed">We fix the root cause, not the symptom. Stop solving the same problem twice.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="group">
+                    <div class="w-12 h-12 flex items-center justify-center mb-4 relative">
+                        <div class="absolute inset-0 bg-[#4FB3A2]/10 clip-hex-flat transition-all group-hover:bg-[#4FB3A2] group-hover:scale-110 duration-300"></div>
+                        <iconify-icon icon="solar:shield-warning-linear" class="text-[#4FB3A2] text-xl relative z-10 group-hover:text-white transition-colors"></iconify-icon>
+                    </div>
+                    <h3 class="text-[#1F3A5F] font-semibold text-base mb-2 group-hover:text-[#4FB3A2] transition-colors">Prevention over firefighting</h3>
+                    <p class="text-[#5B6F82] text-sm leading-relaxed">We fix the root cause. Stop solving the same problem twice.</p>
                 </div>
-                <div class="flex flex-col gap-3">
-                    <div class="text-[#D6A24C] mb-2"><i data-lucide="layout-grid" class="w-6 h-6"></i></div>
-                    <h3 class="text-[#1F3A5F] font-medium text-lg">Clarity over complexity</h3>
-                    <p class="text-[#5B6F82] text-base leading-relaxed">Simple systems scale. Complex ones break. We remove the noise.</p>
+                <div class="group">
+                    <div class="w-12 h-12 flex items-center justify-center mb-4 relative">
+                        <div class="absolute inset-0 bg-[#4FB3A2]/10 clip-hex-flat transition-all group-hover:bg-[#4FB3A2] group-hover:scale-110 duration-300"></div>
+                        <iconify-icon icon="solar:widget-2-linear" class="text-[#4FB3A2] text-xl relative z-10 group-hover:text-white transition-colors"></iconify-icon>
+                    </div>
+                    <h3 class="text-[#1F3A5F] font-semibold text-base mb-2 group-hover:text-[#4FB3A2] transition-colors">Clarity over complexity</h3>
+                    <p class="text-[#5B6F82] text-sm leading-relaxed">Simple systems scale. Complex ones break. We remove the noise.</p>
                 </div>
-                <div class="flex flex-col gap-3">
-                    <div class="text-[#D6A24C] mb-2"><i data-lucide="git-merge" class="w-6 h-6"></i></div>
-                    <h3 class="text-[#1F3A5F] font-medium text-lg">Systems over heroics</h3>
-                    <p class="text-[#5B6F82] text-base leading-relaxed">Don't rely on superstars working weekends. Rely on processes that work.</p>
+                <div class="group">
+                    <div class="w-12 h-12 flex items-center justify-center mb-4 relative">
+                        <div class="absolute inset-0 bg-[#4FB3A2]/10 clip-hex-flat transition-all group-hover:bg-[#4FB3A2] group-hover:scale-110 duration-300"></div>
+                        <iconify-icon icon="solar:structure-linear" class="text-[#4FB3A2] text-xl relative z-10 group-hover:text-white transition-colors"></iconify-icon>
+                    </div>
+                    <h3 class="text-[#1F3A5F] font-semibold text-base mb-2 group-hover:text-[#4FB3A2] transition-colors">Systems over heroics</h3>
+                    <p class="text-[#5B6F82] text-sm leading-relaxed">Don't rely on superstars working weekends. Rely on processes.</p>
                 </div>
-                <div class="flex flex-col gap-3">
-                    <div class="text-[#D6A24C] mb-2"><i data-lucide="arrow-up-right" class="w-6 h-6"></i></div>
-                    <h3 class="text-[#1F3A5F] font-medium text-lg">Long-term thinking</h3>
-                    <p class="text-[#5B6F82] text-base leading-relaxed">Building infrastructure that supports the company you want to be in 5 years.</p>
+                <div class="group">
+                    <div class="w-12 h-12 flex items-center justify-center mb-4 relative">
+                        <div class="absolute inset-0 bg-[#4FB3A2]/10 clip-hex-flat transition-all group-hover:bg-[#4FB3A2] group-hover:scale-110 duration-300"></div>
+                        <iconify-icon icon="solar:route-linear" class="text-[#4FB3A2] text-xl relative z-10 group-hover:text-white transition-colors"></iconify-icon>
+                    </div>
+                    <h3 class="text-[#1F3A5F] font-semibold text-base mb-2 group-hover:text-[#4FB3A2] transition-colors">Long-term thinking</h3>
+                    <p class="text-[#5B6F82] text-sm leading-relaxed">Infrastructure that supports the company you want to be.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 lg:py-32">
+    <!-- About Section with Hexagon Image Placeholder -->
+    <section class="lg:py-32 overflow-hidden pt-24 pb-24 relative" id="about">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-start">
-                <div>
+            <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+                <div class="lg:col-span-7">
                     <h2 class="text-3xl lg:text-4xl font-semibold text-[#1F3A5F] tracking-tight mb-6">
                         Why Niavicta exists
                     </h2>
-                    <div class="space-y-6 text-lg lg:text-xl text-[#5B6F82] leading-relaxed">
-                        <p>
-                            We have witnessed too many strong ideas and talented teams fail. Not because of the market, and not because of the product, but because of preventable internal chaos.
+                    <div class="space-y-6 text-lg text-[#5B6F82] leading-relaxed font-light">
+                        <p class="">
+                            We have witnessed too many strong ideas and talented teams fail. Not because of the market, and not because of the product, but because of <span class="font-medium text-[#D6A24C]" style="">preventable internal misalignment</span>.
                         </p>
-                        <p>
-                            Poor systems, unclear ownership, and a lack of regulatory foresight act as silent killers for growing companies. By the time they are noticed, the damage is often expensive to fix.
-                        </p>
-                        <p>
-                            Niavicta was built to bridge the gap between early-stage agility and enterprise-grade stability. We bring the structure you need to grow without losing the speed you value.
-                        </p>
+                        <p class="">Broken systems, unclear ownership, and a lack of regulatory foresight act as silent killers. Niavicta bridges the gap between early-stage agility and enterprise-grade stability.</p>
+                    </div>
+                    
+                    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 p-4 bg-[#FFF9F0] rounded-lg border border-[#D6A24C]/20 shadow-sm hover:border-[#D6A24C] transition-colors group">
+                            <iconify-icon icon="solar:close-circle-bold" class="text-[#D6A24C] text-xl group-hover:scale-110 transition-transform"></iconify-icon>
+                            <span class="text-sm font-medium text-[#1F3A5F]">High talent churn</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-[#FFF9F0] rounded-lg border border-[#D6A24C]/20 shadow-sm hover:border-[#D6A24C] transition-colors group">
+                            <iconify-icon icon="solar:close-circle-bold" class="text-[#D6A24C] text-xl group-hover:scale-110 transition-transform"></iconify-icon>
+                            <span class="text-sm font-medium text-[#1F3A5F]">Regulatory delay</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-[#FFF9F0] rounded-lg border border-[#D6A24C]/20 shadow-sm hover:border-[#D6A24C] transition-colors group">
+                            <iconify-icon icon="solar:close-circle-bold" class="text-[#D6A24C] text-xl group-hover:scale-110 transition-transform"></iconify-icon>
+                            <span class="text-sm font-medium text-[#1F3A5F]">Revenue bottlenecks</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-[#FFF9F0] rounded-lg border border-[#D6A24C]/20 shadow-sm hover:border-[#D6A24C] transition-colors group">
+                            <iconify-icon icon="solar:close-circle-bold" class="text-[#D6A24C] text-xl group-hover:scale-110 transition-transform"></iconify-icon>
+                            <span class="text-sm font-medium text-[#1F3A5F]">Founder burnout</span>
+                        </div>
                     </div>
                 </div>
-                <div class="mt-12 lg:mt-0 bg-white p-8 lg:p-12 rounded-xl border border-[#1F3A5F]/10 shadow-sm">
-                    <h3 class="text-[#1F3A5F] font-medium text-xl mb-6">The cost of inaction</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="x-circle" class="w-5 h-5 text-[#D6A24C] mt-1"></i>
-                            <span class="text-[#5B6F82] text-lg">Regulatory fines and delayed launches</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="x-circle" class="w-5 h-5 text-[#D6A24C] mt-1"></i>
-                            <span class="text-[#5B6F82] text-lg">High talent churn due to unclear roles</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="x-circle" class="w-5 h-5 text-[#D6A24C] mt-1"></i>
-                            <span class="text-[#5B6F82] text-lg">Operational bottlenecks that stall revenue</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="x-circle" class="w-5 h-5 text-[#D6A24C] mt-1"></i>
-                            <span class="text-[#5B6F82] text-lg">Founders trapped in daily firefighting</span>
-                        </li>
-                    </ul>
+                
+                <!-- Abstract Graphic -->
+                <div class="lg:col-span-5 mt-12 lg:mt-0 relative">
+                    <div class="aspect-square relative">
+                        <!-- Hexagon Cluster -->
+                        <div class="absolute inset-0 bg-[#1F3A5F] clip-hex flex items-center justify-center text-white/10">
+                           <svg width="100%" height="100%" viewBox="0 0 100 100" class="absolute inset-0 opacity-20">
+                                <pattern id="hex-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                     <path d="M10 0 L20 5 L20 15 L10 20 L0 15 L0 5 Z" fill="none" stroke="#4FB3A2" stroke-width="0.5"></path>
+                                </pattern>
+                                <rect width="100" height="100" fill="url(#hex-pattern)" class=""></rect>
+                           </svg>
+                        </div>
+                        <div class="clip-hex flex bg-[#FFF9F0] absolute top-[2px] right-[2px] bottom-[2px] left-[2px] items-center justify-center border-4 border-[#D6A24C]/10">
+                             <div class="text-center pt-8 pr-8 pb-8 pl-8">
+                                 <iconify-icon icon="solar:danger-triangle-linear" class="text-6xl text-[#D6A24C] mb-4 drop-shadow-sm"></iconify-icon>
+                                 <p class="text-[#1F3A5F] font-bold text-lg">The cost of inaction<br>is exponential.</p>
+                             </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="services" class="py-24 bg-white relative">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#4FB3A2 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="max-w-2xl mb-16">
                 <h2 class="text-3xl lg:text-4xl font-semibold text-[#1F3A5F] tracking-tight mb-4">
-                    Core areas of focus
+                    Core Modules
                 </h2>
                 <p class="text-lg text-[#5B6F82]">
-                    We work hands-on to implement frameworks that create immediate stability and long-term value.
+                    We implement frameworks that create immediate stability.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="group p-8 rounded-xl bg-[#E6EBF0]/30 border border-[#1F3A5F]/10 hover:border-[#4FB3A2]/50 transition-colors">
-                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-[#1F3A5F] shadow-sm mb-6 group-hover:text-[#4FB3A2] transition-colors">
-                        <i data-lucide="git-branch" class="w-6 h-6"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service Cards -->
+                <div class="group p-8 rounded-2xl bg-[#F5F7FA] border border-[#1F3A5F]/5 hover:border-[#4FB3A2] hover:bg-white hover:shadow-xl hover:shadow-[#4FB3A2]/10 transition-all duration-300">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-[#4FB3A2] shadow-sm mb-6 border border-[#4FB3A2]/10 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
+                        <iconify-icon icon="solar:sitemap-linear" class="text-2xl relative z-10"></iconify-icon>
                     </div>
-                    <h3 class="text-xl font-medium text-[#1F3A5F] mb-3">Organizational Design</h3>
-                    <p class="text-[#5B6F82] leading-relaxed">
-                        Defining clear roles, responsibilities, and decision-making frameworks. We eliminate "who owns this?" from your vocabulary.
+                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Organizational Design</h3>
+                    <p class="text-[#5B6F82] text-sm leading-relaxed">
+                        Defining clear roles and decision-making frameworks. Eliminate "who owns this?" from your vocabulary.
                     </p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="group p-8 rounded-xl bg-[#E6EBF0]/30 border border-[#1F3A5F]/10 hover:border-[#4FB3A2]/50 transition-colors">
-                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-[#1F3A5F] shadow-sm mb-6 group-hover:text-[#4FB3A2] transition-colors">
-                        <i data-lucide="check-square" class="w-6 h-6"></i>
+                <div class="group p-8 rounded-2xl bg-[#F5F7FA] border border-[#1F3A5F]/5 hover:border-[#4FB3A2] hover:bg-white hover:shadow-xl hover:shadow-[#4FB3A2]/10 transition-all duration-300">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-[#4FB3A2] shadow-sm mb-6 border border-[#4FB3A2]/10 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
+                        <iconify-icon icon="solar:clipboard-check-linear" class="text-2xl relative z-10"></iconify-icon>
                     </div>
-                    <h3 class="text-xl font-medium text-[#1F3A5F] mb-3">Quality Systems (QMS)</h3>
-                    <p class="text-[#5B6F82] leading-relaxed">
+                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Quality Systems (QMS)</h3>
+                    <p class="text-[#5B6F82] text-sm leading-relaxed">
                         Building lean, compliant quality management systems that pass audits without slowing down execution.
                     </p>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="group p-8 rounded-xl bg-[#E6EBF0]/30 border border-[#1F3A5F]/10 hover:border-[#4FB3A2]/50 transition-colors">
-                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-[#1F3A5F] shadow-sm mb-6 group-hover:text-[#4FB3A2] transition-colors">
-                        <i data-lucide="scale" class="w-6 h-6"></i>
+                <div class="group p-8 rounded-2xl bg-[#F5F7FA] border border-[#1F3A5F]/5 hover:border-[#4FB3A2] hover:bg-white hover:shadow-xl hover:shadow-[#4FB3A2]/10 transition-all duration-300">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-[#4FB3A2] shadow-sm mb-6 border border-[#4FB3A2]/10 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
+                        <iconify-icon icon="solar:scale-linear" class="text-2xl relative z-10"></iconify-icon>
                     </div>
-                    <h3 class="text-xl font-medium text-[#1F3A5F] mb-3">Regulatory Readiness</h3>
-                    <p class="text-[#5B6F82] leading-relaxed">
-                        Preparing your company for regulatory scrutiny. We turn compliance from a risk factor into a competitive asset.
+                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Regulatory Readiness</h3>
+                    <p class="text-[#5B6F82] text-sm leading-relaxed">
+                        Preparing your company for scrutiny. We turn compliance from a risk factor into a competitive asset.
                     </p>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="group p-8 rounded-xl bg-[#E6EBF0]/30 border border-[#1F3A5F]/10 hover:border-[#4FB3A2]/50 transition-colors">
-                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-[#1F3A5F] shadow-sm mb-6 group-hover:text-[#4FB3A2] transition-colors">
-                        <i data-lucide="workflow" class="w-6 h-6"></i>
+                <div class="group p-8 rounded-2xl bg-[#F5F7FA] border border-[#1F3A5F]/5 hover:border-[#4FB3A2] hover:bg-white hover:shadow-xl hover:shadow-[#4FB3A2]/10 transition-all duration-300">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-[#4FB3A2] shadow-sm mb-6 border border-[#4FB3A2]/10 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
+                        <iconify-icon icon="solar:diagram-up-linear" class="text-2xl relative z-10"></iconify-icon>
                     </div>
-                    <h3 class="text-xl font-medium text-[#1F3A5F] mb-3">Process Architecture</h3>
-                    <p class="text-[#5B6F82] leading-relaxed">
-                        Mapping and optimizing core business processes. We identify bottlenecks and redesign workflows for speed.
+                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Process Architecture</h3>
+                    <p class="text-[#5B6F82] text-sm leading-relaxed">
+                        Mapping and optimizing core business processes. We identify bottlenecks and redesign workflows.
                     </p>
                 </div>
 
-                <!-- Card 5 -->
-                <div class="group p-8 rounded-xl bg-[#E6EBF0]/30 border border-[#1F3A5F]/10 hover:border-[#4FB3A2]/50 transition-colors">
-                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-[#1F3A5F] shadow-sm mb-6 group-hover:text-[#4FB3A2] transition-colors">
-                        <i data-lucide="users" class="w-6 h-6"></i>
+                <div class="group p-8 rounded-2xl bg-[#F5F7FA] border border-[#1F3A5F]/5 hover:border-[#4FB3A2] hover:bg-white hover:shadow-xl hover:shadow-[#4FB3A2]/10 transition-all duration-300">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-[#4FB3A2] shadow-sm mb-6 border border-[#4FB3A2]/10 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
+                        <iconify-icon icon="solar:user-speak-linear" class="text-2xl relative z-10"></iconify-icon>
                     </div>
-                    <h3 class="text-xl font-medium text-[#1F3A5F] mb-3">Leadership Alignment</h3>
-                    <p class="text-[#5B6F82] leading-relaxed">
-                        Ensuring the executive team is aligned on strategy and execution discipline. Bridging the gap between vision and reality.
+                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Leadership Alignment</h3>
+                    <p class="text-[#5B6F82] text-sm leading-relaxed">
+                        Ensuring the executive team is aligned on strategy. Bridging the gap between vision and reality.
                     </p>
                 </div>
 
-                <!-- Card 6 -->
-                <div class="group p-8 rounded-xl bg-gradient-to-br from-[#1F3A5F] to-[#2a4a75] text-white border border-[#1F3A5F]/10">
-                    <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-[#4FB3A2] shadow-sm mb-6">
-                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                <div class="group p-8 rounded-2xl bg-[#1F3A5F] text-white border border-[#1F3A5F] relative overflow-hidden hover:shadow-xl hover:shadow-[#1F3A5F]/30 transition-all">
+                    <div class="absolute -right-8 -top-8 w-32 h-32 bg-[#4FB3A2] rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                    <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-[#4FB3A2] shadow-sm mb-6 backdrop-blur-sm group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
+                        <iconify-icon icon="solar:code-square-linear" class="text-2xl"></iconify-icon>
                     </div>
-                    <h3 class="text-xl font-medium text-white mb-3">Digital Transition</h3>
-                    <p class="text-[#E6EBF0]/80 leading-relaxed">
+                    <h3 class="text-lg font-bold text-white mb-3">Digital Transition</h3>
+                    <p class="text-[#E6EBF0]/80 text-sm leading-relaxed">
                         Currently consulting, soon to be software-enabled. We are building the tools to automate the systems we design.
                     </p>
                 </div>
@@ -222,12 +330,12 @@
         </div>
     </section>
 
-    <!-- Approach Section -->
-    <section id="approach" class="py-24 lg:py-32 bg-[#E6EBF0]">
+    <!-- Approach Section (Hex Steps) -->
+    <section id="approach" class="py-24 lg:py-32 bg-[#F5F7FA]">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-20">
                 <h2 class="text-3xl lg:text-4xl font-semibold text-[#1F3A5F] tracking-tight mb-4">
-                    How we work
+                    Our Methodology
                 </h2>
                 <p class="text-lg text-[#5B6F82] max-w-2xl mx-auto">
                     A pragmatic, phased approach to moving from operational chaos to structured scale.
@@ -236,42 +344,54 @@
 
             <div class="relative">
                 <!-- Connecting Line (Desktop) -->
-                <div class="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-[#1F3A5F]/10 w-full z-0"></div>
+                <div class="hidden lg:block absolute top-6 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-[#1F3A5F]/10 via-[#4FB3A2] to-[#1F3A5F]/10 z-0"></div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 relative z-10">
                     <!-- Step 1 -->
-                    <div class="relative pt-4 lg:pt-0">
-                        <div class="w-10 h-10 bg-[#1F3A5F] text-white rounded-full flex items-center justify-center text-sm font-semibold mb-6 lg:mx-auto ring-8 ring-[#E6EBF0]">1</div>
-                        <div class="lg:text-center">
-                            <h3 class="text-[#1F3A5F] font-medium text-lg mb-2">Discovery & Gap Analysis</h3>
-                            <p class="text-[#5B6F82] text-base">We dig deep to understand where your systems are breaking and identify critical risks.</p>
+                    <div class="relative pt-4 lg:pt-0 group">
+                        <div class="w-14 h-14 mx-auto mb-6 relative flex items-center justify-center">
+                             <div class="absolute inset-0 bg-[#1F3A5F] clip-hex transition-transform group-hover:scale-110 duration-300 shadow-lg shadow-[#1F3A5F]/20"></div>
+                             <span class="relative text-white font-bold z-10">01</span>
+                        </div>
+                        <div class="lg:text-center px-4">
+                            <h3 class="text-[#1F3A5F] font-bold text-lg mb-2">Discovery &amp; Audit</h3>
+                            <p class="text-[#5B6F82] text-sm leading-relaxed">We dig deep to identify where your systems are breaking and find critical risks.</p>
                         </div>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="relative pt-4 lg:pt-0">
-                        <div class="w-10 h-10 bg-[#5B6F82] text-white rounded-full flex items-center justify-center text-sm font-semibold mb-6 lg:mx-auto ring-8 ring-[#E6EBF0]">2</div>
-                        <div class="lg:text-center">
-                            <h3 class="text-[#1F3A5F] font-medium text-lg mb-2">System Design</h3>
-                            <p class="text-[#5B6F82] text-base">We architect the processes, organizational charts, and quality frameworks you need.</p>
+                    <div class="relative pt-4 lg:pt-0 group">
+                        <div class="w-14 h-14 mx-auto mb-6 relative flex items-center justify-center">
+                             <div class="absolute inset-0 bg-white border-2 border-[#4FB3A2] clip-hex transition-colors group-hover:bg-[#4FB3A2] duration-300"></div>
+                             <span class="relative text-[#4FB3A2] font-bold z-10 group-hover:text-white transition-colors">02</span>
+                        </div>
+                        <div class="lg:text-center px-4">
+                            <h3 class="text-[#1F3A5F] font-bold text-lg mb-2">Architect Design</h3>
+                            <p class="text-[#5B6F82] text-sm leading-relaxed">We design the specific processes, org charts, and quality frameworks you need.</p>
                         </div>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="relative pt-4 lg:pt-0">
-                        <div class="w-10 h-10 bg-[#5B6F82] text-white rounded-full flex items-center justify-center text-sm font-semibold mb-6 lg:mx-auto ring-8 ring-[#E6EBF0]">3</div>
-                        <div class="lg:text-center">
-                            <h3 class="text-[#1F3A5F] font-medium text-lg mb-2">Implementation</h3>
-                            <p class="text-[#5B6F82] text-base">We work alongside your team to roll out changes, ensuring buy-in and understanding.</p>
+                    <div class="relative pt-4 lg:pt-0 group">
+                         <div class="w-14 h-14 mx-auto mb-6 relative flex items-center justify-center">
+                             <div class="absolute inset-0 bg-white border-2 border-[#D6A24C] clip-hex transition-colors group-hover:bg-[#D6A24C] duration-300"></div>
+                             <span class="relative text-[#D6A24C] font-bold z-10 group-hover:text-white transition-colors">03</span>
+                        </div>
+                        <div class="lg:text-center px-4">
+                            <h3 class="text-[#1F3A5F] font-bold text-lg mb-2">Implementation</h3>
+                            <p class="text-[#5B6F82] text-sm leading-relaxed">We work alongside your team to roll out changes, ensuring buy-in and adoption.</p>
                         </div>
                     </div>
 
                     <!-- Step 4 -->
-                    <div class="relative pt-4 lg:pt-0">
-                        <div class="w-10 h-10 bg-[#4FB3A2] text-white rounded-full flex items-center justify-center text-sm font-semibold mb-6 lg:mx-auto ring-8 ring-[#E6EBF0]">4</div>
-                        <div class="lg:text-center">
-                            <h3 class="text-[#1F3A5F] font-medium text-lg mb-2">Handover & Evolution</h3>
-                            <p class="text-[#5B6F82] text-base">We train your leaders to own the systems, ensuring they improve over time.</p>
+                    <div class="relative pt-4 lg:pt-0 group">
+                        <div class="w-14 h-14 mx-auto mb-6 relative flex items-center justify-center">
+                             <div class="absolute inset-0 bg-[#4FB3A2] clip-hex transition-transform group-hover:rotate-180 duration-500 shadow-lg shadow-[#4FB3A2]/30"></div>
+                             <span class="relative text-white font-bold z-10 group-hover:rotate-180 transition-transform duration-500">04</span>
+                        </div>
+                        <div class="lg:text-center px-4">
+                            <h3 class="text-[#1F3A5F] font-bold text-lg mb-2">Handover</h3>
+                            <p class="text-[#5B6F82] text-sm leading-relaxed">We train your leaders to own the systems, ensuring they improve over time.</p>
                         </div>
                     </div>
                 </div>
@@ -280,74 +400,94 @@
     </section>
 
     <!-- Vision Section -->
-    <section id="vision" class="py-24 bg-[#1F3A5F] text-white">
-        <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-            <span class="text-[#4FB3A2] font-medium tracking-wide text-sm uppercase mb-4 block">The Future of Niavicta</span>
+    <section id="vision" class="py-24 bg-[#1F3A5F] text-white relative overflow-hidden">
+        <!-- Abstract Hex Overlay -->
+        <div class="absolute inset-0 z-0">
+             <div class="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-[#4FB3A2] rounded-full blur-[100px] opacity-20"></div>
+             <div class="absolute -left-20 -top-20 w-[300px] h-[300px] bg-[#D6A24C] rounded-full blur-[80px] opacity-10"></div>
+        </div>
+        
+        <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 bg-[#4FB3A2]/20 rounded-full border border-[#4FB3A2]/30">
+                <div class="w-2 h-2 rounded-full bg-[#4FB3A2] animate-pulse"></div>
+                <span class="text-[#4FB3A2] font-semibold tracking-wide text-xs uppercase">The Roadmap</span>
+            </div>
             <h2 class="text-3xl lg:text-5xl font-semibold tracking-tight mb-8">
                 Consultancy today.<br>SaaS solutions tomorrow.
             </h2>
-            <p class="text-lg lg:text-xl text-[#E6EBF0]/80 leading-relaxed mb-10">
-                We are capturing the patterns of successful companies. Our long-term vision is to build the digital infrastructure that makes operational excellence the default state, not a lucky accident.
+            <p class="text-lg lg:text-xl text-[#E6EBF0]/80 leading-relaxed mb-10 font-light">
+                We are capturing the patterns of successful companies. Our long-term vision is to build the digital infrastructure that makes operational excellence the default state.
             </p>
-            <div class="inline-flex items-center gap-2 text-[#4FB3A2] font-medium hover:text-white transition-colors cursor-pointer">
+            <div class="inline-flex items-center gap-2 text-[#4FB3A2] font-semibold hover:text-white transition-colors cursor-pointer group">
                 <span>Learn about our roadmap</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <iconify-icon icon="solar:arrow-right-linear" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-white">
+    <section class="bg-white pt-24 pb-24 relative" id="contact">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-20">
-                <div>
+                <div class="">
                     <h2 class="text-3xl lg:text-4xl font-semibold text-[#1F3A5F] tracking-tight mb-6">
-                        Stop the chaos. <br>Start building.
+                        Stop the chaos. <br>Start <span class="text-[#4FB3A2]">building</span>.
                     </h2>
-                    <p class="text-lg text-[#5B6F82] mb-8 leading-relaxed">
-                        If you are a founder or executive who feels the weight of operational fragility, let’s talk. No sales pitch, just a conversation about where you are and where you need to be.
+                    <p class="text-lg text-[#5B6F82] mb-10 leading-relaxed">
+                        If you are a founder or executive who feels the weight of operational fragility, let’s talk.
                     </p>
                     
                     <div class="flex flex-col gap-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded bg-[#E6EBF0] flex items-center justify-center text-[#1F3A5F]">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 flex items-center justify-center relative">
+                                <div class="absolute inset-0 bg-[#4FB3A2]/10 clip-hex group-hover:bg-[#4FB3A2] transition-colors duration-300"></div>
+                                <iconify-icon icon="solar:letter-linear" class="text-[#4FB3A2] text-xl relative z-10 group-hover:text-white transition-colors"></iconify-icon>
                             </div>
-                            <div>
-                                <p class="text-sm text-[#5B6F82]">Email us directly</p>
-                                <a href="mailto:hello@niavicta.com" class="text-[#1F3A5F] font-medium hover:text-[#4FB3A2] transition-colors">hello@niavicta.com</a>
+                            <div class="">
+                                <p class="text-xs text-[#5B6F82] uppercase tracking-wide mb-0.5">Email us</p>
+                                <a href="mailto:hello@niavicta.com" class="text-[#1F3A5F] font-bold hover:text-[#4FB3A2] transition-colors">hello@niavicta.com</a>
                             </div>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded bg-[#E6EBF0] flex items-center justify-center text-[#1F3A5F]">
-                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 flex items-center justify-center relative">
+                                <div class="absolute inset-0 bg-[#D6A24C]/10 clip-hex group-hover:bg-[#D6A24C] transition-colors duration-300"></div>
+                                <iconify-icon icon="solar:map-point-linear" class="text-[#D6A24C] text-xl relative z-10 group-hover:text-white transition-colors"></iconify-icon>
                             </div>
-                            <div>
-                                <p class="text-sm text-[#5B6F82]">Based in</p>
-                                <span class="text-[#1F3A5F] font-medium">London & Remote Worldwide</span>
+                            <div class="">
+                                <p class="text-xs text-[#5B6F82] uppercase tracking-wide mb-0.5">Location</p>
+                                <span class="font-bold text-[#1F3A5F]">Utrecht, Netherlands &amp; Remote</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-12 lg:mt-0 bg-[#E6EBF0]/30 p-8 rounded-xl border border-[#1F3A5F]/10">
-                    <form onsubmit="event.preventDefault();" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-[#1F3A5F] mb-2">Name</label>
-                            <input type="text" id="name" class="w-full bg-white border border-[#5B6F82]/20 rounded-lg px-4 py-3 text-[#1F3A5F] focus:outline-none focus:ring-2 focus:ring-[#4FB3A2]/50" placeholder="John Doe">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-[#1F3A5F] mb-2">Work Email</label>
-                            <input type="email" id="email" class="w-full bg-white border border-[#5B6F82]/20 rounded-lg px-4 py-3 text-[#1F3A5F] focus:outline-none focus:ring-2 focus:ring-[#4FB3A2]/50" placeholder="john@company.com">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-[#1F3A5F] mb-2">How can we help?</label>
-                            <textarea id="message" rows="4" class="w-full bg-white border border-[#5B6F82]/20 rounded-lg px-4 py-3 text-[#1F3A5F] focus:outline-none focus:ring-2 focus:ring-[#4FB3A2]/50" placeholder="Briefly describe your current challenge..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-[#1F3A5F] text-white font-medium py-3 rounded-lg hover:bg-[#1F3A5F]/90 transition-all shadow-sm">
-                            Send Message
-                        </button>
-                    </form>
+                <div class="mt-12 lg:mt-0">
+                    <div class="bg-white p-8 rounded-2xl border border-[#1F3A5F]/10 shadow-2xl shadow-[#4FB3A2]/10">
+                        <form onsubmit="event.preventDefault();" class="space-y-5">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="block text-xs font-bold text-[#1F3A5F] mb-1.5 uppercase">Name</label>
+                                    <input type="text" id="name" class="w-full bg-[#F5F7FA] border border-transparent rounded-lg px-4 py-3 text-[#1F3A5F] placeholder-[#5B6F82]/50 focus:bg-white focus:border-[#4FB3A2] focus:ring-0 transition-all outline-none" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-xs font-bold text-[#1F3A5F] mb-1.5 uppercase">Company</label>
+                                    <input type="text" id="company" class="w-full bg-[#F5F7FA] border border-transparent rounded-lg px-4 py-3 text-[#1F3A5F] placeholder-[#5B6F82]/50 focus:bg-white focus:border-[#4FB3A2] focus:ring-0 transition-all outline-none" placeholder="Acme Inc">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-bold text-[#1F3A5F] mb-1.5 uppercase">Work Email</label>
+                                <input type="email" id="email" class="w-full bg-[#F5F7FA] border border-transparent rounded-lg px-4 py-3 text-[#1F3A5F] placeholder-[#5B6F82]/50 focus:bg-white focus:border-[#4FB3A2] focus:ring-0 transition-all outline-none" placeholder="john@company.com">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-xs font-bold text-[#1F3A5F] mb-1.5 uppercase">Challenge</label>
+                                <textarea id="message" rows="4" class="w-full bg-[#F5F7FA] border border-transparent rounded-lg px-4 py-3 text-[#1F3A5F] placeholder-[#5B6F82]/50 focus:bg-white focus:border-[#4FB3A2] focus:ring-0 transition-all outline-none" placeholder="Briefly describe your current operational challenge..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-[#4FB3A2] text-white font-bold py-3.5 rounded-lg hover:bg-[#3EA090] transition-all shadow-md shadow-[#4FB3A2]/20 flex items-center justify-center gap-2 group">
+                                Send Message
+                                <iconify-icon icon="solar:plain-3-linear" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -359,31 +499,32 @@
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
                 <div class="mb-8 md:mb-0">
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="w-6 h-6 bg-[#1F3A5F] rounded flex items-center justify-center text-white">
-                            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+                        <div class="w-6 h-6 flex items-center justify-center relative">
+                             <div class="absolute inset-0 bg-[#4FB3A2] clip-hex"></div>
+                            <iconify-icon icon="solar:layers-linear" class="text-white text-xs relative z-10"></iconify-icon>
                         </div>
                         <span class="text-[#1F3A5F] text-lg font-semibold tracking-tight">Niavicta</span>
                     </div>
-                    <p class="text-[#5B6F82] text-sm max-w-xs">
+                    <p class="text-[#5B6F82] text-sm max-w-xs leading-relaxed">
                         Designing the structures that ambitious companies need to scale safely.
                     </p>
                 </div>
                 <div class="flex gap-8">
-                    <a href="#" class="text-[#5B6F82] hover:text-[#1F3A5F] text-sm font-medium transition-colors">LinkedIn</a>
-                    <a href="#" class="text-[#5B6F82] hover:text-[#1F3A5F] text-sm font-medium transition-colors">Twitter</a>
-                    <a href="#" class="text-[#5B6F82] hover:text-[#1F3A5F] text-sm font-medium transition-colors">Privacy</a>
+                    <a href="#" class="text-[#5B6F82] hover:text-[#4FB3A2] text-sm font-medium transition-colors">LinkedIn</a>
+                    <a href="#" class="text-[#5B6F82] hover:text-[#4FB3A2] text-sm font-medium transition-colors">Twitter</a>
+                    <a href="#" class="text-[#5B6F82] hover:text-[#4FB3A2] text-sm font-medium transition-colors">Privacy</a>
                 </div>
             </div>
-            <div class="border-t border-[#1F3A5F]/5 pt-8 text-center md:text-left">
+            <div class="border-t border-[#1F3A5F]/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-[#5B6F82]/60 text-xs">
-                    &copy; 2023 Niavicta Consulting Ltd. All rights reserved.
+                    © 2023 Niavicta Consulting Ltd. All rights reserved.
                 </p>
+                <div class="flex items-center gap-2 text-xs text-[#5B6F82]/40">
+                    <div class="w-2 h-2 bg-[#4FB3A2] rounded-full animate-pulse"></div>
+                    <span>System Operational</span>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
-</body>
-</html>
+</body></html>

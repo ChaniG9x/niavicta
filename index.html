@@ -81,7 +81,7 @@
         
         <!-- Abstract Hex Grid Background for Hero -->
         <div class="absolute top-0 right-0 -z-10 opacity-[0.04] text-[#1F3A5F]">
-            <svg width="600" height="600" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5" class="">
+            <svg width="600" height="600" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5" class="w-[600px] h-[600px]" data-icon-replaced="true" style="width: 600px; height: 600px; color: rgb(31, 58, 95);">
                 <path d="M10 10 L30 10 L40 27 L30 44 L10 44 L0 27 Z"></path>
                 <path d="M50 10 L70 10 L80 27 L70 44 L50 44 L40 27 Z"></path>
                 <path d="M30 44 L50 44 L60 61 L50 78 L30 78 L20 61 Z"></path>
@@ -98,7 +98,7 @@
                 <p class="text-lg text-[#5B6F82] leading-relaxed max-w-lg mb-10 font-normal">
                     We replace operational fragility with engineered systems. Avoid preventable failures by designing clear structures, quality workflows, and scalable operations.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
+                <div class="flex flex-col sm:flex-row gap-4 gap-x-4 gap-y-4">
                     <a href="#contact" class="flex items-center justify-center gap-2 bg-[#1F3A5F] text-white px-8 py-3.5 rounded-lg text-sm font-semibold hover:bg-[#4FB3A2] transition-colors shadow-lg shadow-[#1F3A5F]/20 hover:shadow-[#4FB3A2]/30">
                         <iconify-icon icon="solar:chat-round-dots-linear" class="text-lg"></iconify-icon>
                         Discuss your operations
@@ -113,7 +113,11 @@
             <div class="hidden lg:flex justify-center items-center relative h-[400px]">
                 <div class="w-full h-full relative">
                     <!-- Central Node -->
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48">
+                    <div class="w-24 h-24 absolute top-[2%] left-[9%]">
+                        <div class="clip-hex flex animate-[bounce_3s_infinite] bg-[#D6A24C]/10 border-[#D6A24C]/30 border absolute top-0 right-0 bottom-0 left-0 items-center justify-center -z-40">
+                            <iconify-icon icon="solar:users-group-rounded-linear" class="text-2xl text-[#D6A24C]" width="23" height="23" style="color: rgb(214, 162, 76)"></iconify-icon>
+                        </div>
+                    </div><div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48">
                         <div class="absolute inset-0 bg-white border-2 border-[#4FB3A2]/20 clip-hex shadow-2xl shadow-[#4FB3A2]/10 flex flex-col items-center justify-center z-20">
                             <iconify-icon icon="solar:buildings-2-linear" class="text-5xl text-[#4FB3A2] mb-3"></iconify-icon>
                             <span class="text-xs font-bold text-[#1F3A5F] tracking-tight uppercase">Core System</span>
@@ -121,11 +125,7 @@
                     </div>
 
                     <!-- Satellite Nodes -->
-                    <div class="absolute top-[10%] left-[20%] w-24 h-24">
-                        <div class="absolute inset-0 bg-[#D6A24C]/10 border border-[#D6A24C]/30 clip-hex flex items-center justify-center z-10 animate-[bounce_3s_infinite]">
-                            <iconify-icon icon="solar:users-group-rounded-linear" class="text-2xl text-[#D6A24C]"></iconify-icon>
-                        </div>
-                    </div>
+                    
                     
                     <div class="absolute bottom-[15%] right-[20%] w-28 h-28">
                         <div class="absolute inset-0 bg-[#1F3A5F] clip-hex flex items-center justify-center z-10 shadow-lg shadow-[#1F3A5F]/20">
@@ -240,7 +240,7 @@
                         <div class="clip-hex flex bg-[#FFF9F0] absolute top-[2px] right-[2px] bottom-[2px] left-[2px] items-center justify-center border-4 border-[#D6A24C]/10">
                              <div class="text-center pt-8 pr-8 pb-8 pl-8">
                                  <iconify-icon icon="solar:danger-triangle-linear" class="text-6xl text-[#D6A24C] mb-4 drop-shadow-sm"></iconify-icon>
-                                 <p class="text-[#1F3A5F] font-bold text-lg">The cost of inaction<br>is exponential.</p>
+                                 <p class="text-[#1F3A5F] font-bold text-lg">The cost of inactionis exponential.</p>
                              </div>
                         </div>
                     </div>
@@ -280,9 +280,9 @@
                     <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-[#4FB3A2] shadow-sm mb-6 border border-[#4FB3A2]/10 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
                         <iconify-icon icon="solar:clipboard-check-linear" class="text-2xl relative z-10"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Operational Systems</h3>
+                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Quality Systems (QMS)</h3>
                     <p class="text-[#5B6F82] text-sm leading-relaxed">
-                        Building lean operational systems that scale to pass audits without slowing down execution.
+                        Building lean, compliant quality management systems that pass audits without slowing down execution.
                     </p>
                 </div>
 
@@ -521,13 +521,4 @@
                 </p>
                 <div class="flex items-center gap-2 text-xs text-[#5B6F82]/40">
                     <div class="w-2 h-2 bg-[#4FB3A2] rounded-full animate-pulse"></div>
-                    <span>System Operational</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-</body></html>
-
-
-
+                    <span>System Operational</span></div></div></div></footer></body></html>

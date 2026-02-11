@@ -9,19 +9,16 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         
-        /* Custom Hexagon Utilities - Keeping for legacy UI elements if needed, but reducing prominence */
         .clip-hex-flat {
             clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
         }
 
-        /* Gradient Text */
         .text-gradient {
             background: linear-gradient(135deg, #1F3A5F 0%, #4FB3A2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Animation for Node Pulse */
         @keyframes node-pulse {
             0%, 100% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.1); opacity: 0.8; }
@@ -33,13 +30,10 @@
 </head>
 <body class="bg-[#F5F7FA] text-[#5B6F82] antialiased selection:bg-[#4FB3A2] selection:text-white overflow-x-hidden font-inter">
 
-    <!-- Enhanced Decorative Background Elements: Network Theme -->
+    <!-- Enhanced Decorative Background Elements -->
     <div class="fixed inset-0 z-0 pointer-events-none">
-        <!-- Main Ambient Glows -->
         <div class="absolute top-0 right-0 w-[900px] h-[900px] bg-gradient-to-b from-[#4FB3A2]/5 to-transparent rounded-full blur-3xl opacity-40 -translate-y-1/2 translate-x-1/4"></div>
         <div class="absolute bottom-0 left-0 w-[700px] h-[700px] bg-gradient-to-t from-[#D6A24C]/5 to-transparent rounded-full blur-3xl opacity-30 translate-y-1/3 -translate-x-1/4"></div>
-        
-        <!-- Subtle Network Pattern Overlay -->
         <svg class="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <pattern id="network-grid" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
@@ -55,199 +49,235 @@
     <nav class="fixed z-50 bg-[#F5F7FA]/90 w-full border-[#1F3A5F]/5 border-b backdrop-blur-xl">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- New Logo: Core Network -->
-                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
-                    <div class="w-10 h-10 relative">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full transform transition-transform group-hover:scale-105 duration-500">
-                            <!-- Connection lines -->
-                            <line x1="25" y1="15" x2="15" y2="28" stroke="#4FB3A2" stroke-width="2.5" opacity="0.5"></line>
-                            <line x1="25" y1="15" x2="35" y2="28" stroke="#4FB3A2" stroke-width="2.5" opacity="0.5"></line>
-                            <line x1="15" y1="28" x2="25" y2="40" stroke="#4FB3A2" stroke-width="2.5" opacity="0.5"></line>
-                            <line x1="35" y1="28" x2="25" y2="40" stroke="#4FB3A2" stroke-width="2.5" opacity="0.5"></line>
-                            <line x1="15" y1="28" x2="8" y2="40" stroke="#4FB3A2" stroke-width="2" opacity="0.3"></line>
-                            <line x1="35" y1="28" x2="42" y2="40" stroke="#4FB3A2" stroke-width="2" opacity="0.3"></line>
-                            
-                            <!-- Nodes -->
-                            <circle cx="25" cy="15" r="5" fill="#4FB3A2"></circle>
-                            <circle cx="15" cy="28" r="4" fill="#1F3A5F"></circle>
-                            <circle cx="35" cy="28" r="4" fill="#1F3A5F" class=""></circle>
-                            <circle cx="8" cy="40" r="3.5" fill="#1F3A5F" opacity="0.7" class=""></circle>
-                            <circle cx="42" cy="40" r="3.5" fill="#1F3A5F" opacity="0.7"></circle>
-                            <circle cx="25" cy="40" r="5" fill="#4FB3A2" class=""></circle>
-                        </svg>
-                    </div>
-                    <span class="text-[#1F3A5F] text-lg font-bold tracking-tight">Niavicta</span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-10 items-center">
-                    <a href="#problem" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">Why It Matters</a>
-                    <a href="#services" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">Services</a>
-                    <a href="#methodology" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">Methodology</a>
-                    <a href="#clients" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">Clients</a>
-                </div>
+  <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+    <div class="w-10 h-10 relative">
+      <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full transform transition-transform group-hover:scale-105 duration-500">
+        <line x1="25" y1="15" x2="15" y2="28" stroke="#4FB3A2" stroke-width="2.5" opacity="0.5"></line>
+        <line x1="25" y1="15" x2="35" y2="28" stroke="#4FB3A2" stroke-width="2.5" opacity="0.5"></line>
+        <line x1="15" y1="28" x2="25" y2="40" stroke="#4FB3A2" stroke-width="2.5" opacity="0.5"></line>
+        <line x1="35" y1="28" x2="25" y2="40" stroke="#4FB3A2" stroke-width="2.5" opacity="0.5"></line>
+        <line x1="15" y1="28" x2="8" y2="40" stroke="#4FB3A2" stroke-width="2" opacity="0.3"></line>
+        <line x1="35" y1="28" x2="42" y2="40" stroke="#4FB3A2" stroke-width="2" opacity="0.3"></line>
+        <circle cx="25" cy="15" r="5" fill="#4FB3A2"></circle>
+        <circle cx="15" cy="28" r="4" fill="#1F3A5F" class=""></circle>
+        <circle cx="35" cy="28" r="4" fill="#1F3A5F"></circle>
+        <circle cx="8" cy="40" r="3.5" fill="#1F3A5F" opacity="0.7"></circle>
+        <circle cx="42" cy="40" r="3.5" fill="#1F3A5F" opacity="0.7"></circle>
+        <circle cx="25" cy="40" r="5" fill="#4FB3A2"></circle>
+      </svg>
+    </div>
+    <span class="text-[#1F3A5F] text-lg font-semibold tracking-tight">Niavicta</span>
+  </div>
 
-                <!-- CTA -->
-                <div class="hidden md:flex">
-                    <a href="mailto:hello@niavicta.com" class="group relative inline-flex items-center gap-2 bg-[#4FB3A2] text-white pl-5 pr-4 py-2.5 text-xs font-semibold rounded-full hover:bg-[#3EA090] hover:shadow-lg hover:shadow-[#4FB3A2]/20 transition-all overflow-hidden">
-                        <span>Schedule a consultation</span>
-                        <iconify-icon icon="solar:calendar-linear" class="text-lg group-hover:scale-110 transition-transform"></iconify-icon>
-                    </a>
-                </div>
-            </div>
+  <div class="hidden md:flex space-x-10 items-center">
+    <a href="#problem" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">Why It
+      Matters</a>
+    <a href="#services" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">Services</a>
+    <a href="#methodology" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">Methodology</a>
+    <a href="#clients" class="text-xs font-medium uppercase tracking-widest text-[#5B6F82] hover:text-[#4FB3A2] transition-colors">Clients</a>
+  </div>
+
+  <div class="hidden md:flex">
+    <a href="mailto:hello@niavicta.com" class="group relative inline-flex items-center gap-2 bg-[#4FB3A2] text-white pl-5 pr-4 py-2.5 text-xs font-semibold rounded-full hover:bg-[#3EA090] hover:shadow-lg hover:shadow-[#4FB3A2]/20 transition-all overflow-hidden">
+      <span>Schedule a consultation</span>
+      <iconify-icon icon="solar:calendar-linear" class="text-lg group-hover:scale-110 transition-transform"></iconify-icon>
+    </a>
+  </div>
+</div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="lg:pt-48 lg:pb-24 overflow-hidden z-10 pt-36 pb-20 relative">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-8 items-center px-6 lg:px-8">
-            <div class="max-w-2xl relative z-20">
-                <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 bg-[#1F3A5F]/5 rounded-full border border-[#1F3A5F]/10">
-                    <div class="w-1.5 h-1.5 rounded-full bg-[#4FB3A2] animate-pulse"></div>
-                    <span class="text-[#1F3A5F] font-semibold tracking-wide text-[10px] uppercase">Systems for Scalability</span>
-                </div>
-                
-                <h1 class="lg:text-[4.25rem] leading-[1.05] text-5xl font-bold text-[#1F3A5F] tracking-tight mb-6">Build the company <br>you <span class="text-gradient">envisioned</span>.</h1>
-                <p class="text-lg text-[#5B6F82] leading-relaxed max-w-lg mb-10 font-normal">
-                    We help ambitious, scaling companies build operational systems that work. From organizational design to regulatory readiness, we turn operational fragility into engineered scalability.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="mailto:hello@niavicta.com" class="flex items-center justify-center gap-2 bg-[#1F3A5F] text-white px-8 py-3.5 rounded-lg text-sm font-semibold hover:bg-[#4FB3A2] transition-colors shadow-lg shadow-[#1F3A5F]/20 hover:shadow-[#4FB3A2]/30">
-                        <iconify-icon icon="solar:calendar-add-linear" class="text-lg"></iconify-icon>
-                        Schedule a consultation
-                    </a>
-                    <a href="#services" class="flex items-center justify-center gap-2 hover:bg-[#F5F7FA] hover:border-[#1F3A5F]/30 transition-all text-sm font-medium text-[#1F3A5F] bg-white border-[#1F3A5F]/10 border rounded-lg pt-3.5 pr-8 pb-3.5 pl-8">
-                        Our services
-                    </a>
-                </div>
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-8 items-center px-6 lg:px-8">
+    <div class="max-w-2xl relative z-20">
+      <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 bg-[#1F3A5F]/5 rounded-full border border-[#1F3A5F]/10">
+        <div class="w-1.5 h-1.5 rounded-full bg-[#4FB3A2] animate-pulse"></div>
+        <span class="text-[#1F3A5F] font-semibold tracking-wide text-[10px] uppercase">Systems for Scalability</span>
+      </div>
+
+      <h1 class="lg:text-[4.25rem] leading-[1.05] text-5xl font-semibold text-[#1F3A5F] tracking-tight mb-6">Build the
+        company <br>you <span class="text-gradient">envisioned</span>.</h1>
+      <p class="text-lg text-[#5B6F82] leading-relaxed max-w-lg mb-10 font-normal">
+        We help ambitious, scaling companies build operational systems that work. From organizational design to
+        regulatory readiness, we turn operational fragility into engineered scalability.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="mailto:hello@niavicta.com" class="flex items-center justify-center gap-2 bg-[#1F3A5F] text-white px-8 py-3.5 rounded-lg text-sm font-semibold hover:bg-[#4FB3A2] transition-colors shadow-lg shadow-[#1F3A5F]/20 hover:shadow-[#4FB3A2]/30">
+          <iconify-icon icon="solar:calendar-add-linear" class="text-lg"></iconify-icon>
+          Schedule a consultation
+        </a>
+        <a href="#services" class="flex items-center justify-center gap-2 hover:bg-[#F5F7FA] hover:border-[#1F3A5F]/30 transition-all text-sm font-medium text-[#1F3A5F] bg-white border-[#1F3A5F]/10 border rounded-lg pt-3.5 pr-8 pb-3.5 pl-8">
+          Our services
+        </a>
+      </div>
+    </div>
+
+    <!-- Conceptual Visual -->
+    <div class="hidden lg:flex justify-center items-center relative h-[500px]">
+      <div class="w-full h-full relative">
+        <svg class="absolute inset-0 w-full h-full -z-10 pointer-events-none">
+          <line x1="50%" y1="50%" x2="20%" y2="25%" stroke="#4FB3A2" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="4 4"></line>
+          <line x1="50%" y1="50%" x2="80%" y2="75%" stroke="#4FB3A2" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="4 4"></line>
+          <line x1="50%" y1="50%" x2="80%" y2="25%" stroke="#1F3A5F" stroke-width="1.5" stroke-opacity="0.2" stroke-dasharray="4 4"></line>
+
+          <circle cx="20%" cy="25%" r="3" fill="#4FB3A2" class="animate-node"></circle>
+          <circle cx="80%" cy="75%" r="3" fill="#D6A24C" class="animate-node" style="animation-delay: 1s;"></circle>
+          <circle cx="80%" cy="25%" r="3" fill="#1F3A5F" class="animate-node" style="animation-delay: 2s;"></circle>
+        </svg>
+
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+          <div class="relative w-32 h-32 flex items-center justify-center">
+            <div class="absolute inset-0 bg-[#4FB3A2]/10 rounded-full animate-ping"></div>
+            <div class="shadow-[#4FB3A2]/20 flex flex-col z-20 bg-white border-[#4FB3A2]/20 border rounded-full absolute top-2 right-2 bottom-2 left-2 shadow-2xl items-center justify-center">
+              <iconify-icon icon="solar:sitemap-linear" class="text-3xl text-[#4FB3A2] mb-1"></iconify-icon>
+              <span class="text-[10px] uppercase font-bold text-[#1F3A5F] tracking-wide text-center">Operational Core</span>
             </div>
-
-            <!-- Conceptual Visual: Core Network Adaptation -->
-            <div class="hidden lg:flex justify-center items-center relative h-[500px]">
-                <div class="w-full h-full relative">
-                    
-                    <!-- Decorative Network Lines (Background) -->
-                    <svg class="absolute inset-0 w-full h-full -z-10 pointer-events-none">
-                        <!-- Connection to Org Design -->
-                        <line x1="50%" y1="50%" x2="20%" y2="25%" stroke="#4FB3A2" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="4 4"></line>
-                        <!-- Connection to Regulatory -->
-                        <line x1="50%" y1="50%" x2="80%" y2="75%" stroke="#4FB3A2" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="4 4"></line>
-                        <!-- Connection to Process -->
-                        <line x1="50%" y1="50%" x2="80%" y2="25%" stroke="#1F3A5F" stroke-width="1.5" stroke-opacity="0.2" stroke-dasharray="4 4"></line>
-                        
-                        <!-- Floating particles -->
-                        <circle cx="20%" cy="25%" r="3" fill="#4FB3A2" class="animate-node"></circle>
-                        <circle cx="80%" cy="75%" r="3" fill="#D6A24C" class="animate-node" style="animation-delay: 1s;"></circle>
-                        <circle cx="80%" cy="25%" r="3" fill="#1F3A5F" class="animate-node" style="animation-delay: 2s;"></circle>
-                    </svg>
-
-                    <!-- Central Core Hub (Matches Logo's Central Teal Node concept) -->
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                        <div class="relative w-32 h-32 flex items-center justify-center">
-                            <!-- Outer pulsing rings -->
-                            <div class="absolute inset-0 bg-[#4FB3A2]/10 rounded-full animate-ping"></div>
-                            <div class="shadow-[#4FB3A2]/20 flex flex-col z-20 bg-white border-[#4FB3A2]/20 border rounded-full absolute top-2 right-2 bottom-2 left-2 shadow-2xl items-center justify-center">
-                                <iconify-icon icon="solar:sitemap-linear" class="text-3xl text-[#4FB3A2] mb-1"></iconify-icon>
-                                <span class="text-[10px] uppercase font-bold text-[#1F3A5F] tracking-wide text-center">Operational 
-Core</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Orbiting Node: Org Design -->
-                    <div class="absolute top-[15%] left-[5%] p-4 bg-white rounded-xl shadow-lg border border-[#4FB3A2]/20 flex items-center gap-3 animate-[pulse_4s_infinite]">
-                        <div class="w-8 h-8 rounded-full bg-[#4FB3A2]/10 flex items-center justify-center">
-                            <iconify-icon icon="solar:users-group-rounded-linear" class="text-lg text-[#4FB3A2]"></iconify-icon>
-                        </div>
-                        <div class="">
-                            <span class="block text-xs font-bold text-[#1F3A5F]">Structure</span>
-                            <span class="block text-[10px] text-[#5B6F82]">Org Design</span>
-                        </div>
-                    </div>
-
-                    <!-- Orbiting Node: Regulatory -->
-                    <div class="absolute bottom-[20%] right-[5%] p-4 bg-white rounded-xl shadow-lg border border-[#D6A24C]/20 flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-[#D6A24C]/10 flex items-center justify-center">
-                            <iconify-icon icon="solar:shield-check-linear" class="text-lg text-[#D6A24C]"></iconify-icon>
-                        </div>
-                        <div class="">
-                            <span class="block text-xs font-bold text-[#1F3A5F]">Compliance</span>
-                            <span class="block text-[10px] text-[#5B6F82]">Regulatory</span>
-                        </div>
-                    </div>
-
-                    <!-- Orbiting Node: Process -->
-                    <div class="absolute top-[20%] right-[10%] p-4 bg-white rounded-xl shadow-lg border border-[#1F3A5F]/10 flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-[#1F3A5F]/10 flex items-center justify-center">
-                            <iconify-icon icon="solar:diagram-up-linear" class="text-lg text-[#1F3A5F]"></iconify-icon>
-                        </div>
-                        <div class="">
-                            <span class="block text-xs font-bold text-[#1F3A5F]">Efficiency</span>
-                            <span class="block text-[10px] text-[#5B6F82]">Process Arch</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+
+        <div class="absolute top-[15%] left-[5%] p-4 bg-white rounded-xl shadow-lg border border-[#4FB3A2]/20 flex items-center gap-3 animate-[pulse_4s_infinite]">
+          <div class="w-8 h-8 rounded-full bg-[#4FB3A2]/10 flex items-center justify-center">
+            <iconify-icon icon="solar:users-group-rounded-linear" class="text-lg text-[#4FB3A2]"></iconify-icon>
+          </div>
+          <div class="">
+            <span class="block text-xs font-bold text-[#1F3A5F]">Structure</span>
+            <span class="block text-[10px] text-[#5B6F82]">Org Design</span>
+          </div>
+        </div>
+
+        <div class="absolute bottom-[20%] right-[5%] p-4 bg-white rounded-xl shadow-lg border border-[#D6A24C]/20 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-[#D6A24C]/10 flex items-center justify-center">
+            <iconify-icon icon="solar:shield-check-linear" class="text-lg text-[#D6A24C]"></iconify-icon>
+          </div>
+          <div class="">
+            <span class="block text-xs font-bold text-[#1F3A5F]">Compliance</span>
+            <span class="block text-[10px] text-[#5B6F82]">Regulatory</span>
+          </div>
+        </div>
+
+        <div class="absolute top-[20%] right-[10%] p-4 bg-white rounded-xl shadow-lg border border-[#1F3A5F]/10 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-[#1F3A5F]/10 flex items-center justify-center">
+            <iconify-icon icon="solar:diagram-up-linear" class="text-lg text-[#1F3A5F]"></iconify-icon>
+          </div>
+          <div class="">
+            <span class="block text-xs font-bold text-[#1F3A5F]">Efficiency</span>
+            <span class="block text-[10px] text-[#5B6F82]">Process Arch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Trust Indicators -->
     <section class="border-y border-[#1F3A5F]/5 bg-white py-8">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <p class="text-xs font-semibold text-[#5B6F82] uppercase tracking-widest mb-6">Scaling companies across</p>
-            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium text-[#1F3A5F]/80">
-                <span class="flex items-center gap-2"><iconify-icon icon="solar:server-linear" class="text-[#4FB3A2]"></iconify-icon> SaaS</span>
-                <span class="text-[#1F3A5F]/20">•</span>
-                <span class="flex items-center gap-2"><iconify-icon icon="solar:card-linear" class="text-[#4FB3A2]"></iconify-icon> Fintech</span>
-                <span class="text-[#1F3A5F]/20">•</span>
-                <span class="flex items-center gap-2"><iconify-icon icon="solar:heart-pulse-linear" class="text-[#4FB3A2]"></iconify-icon> MedTech</span>
-                <span class="text-[#1F3A5F]/20">•</span>
-                <span class="flex items-center gap-2"><iconify-icon icon="solar:factory-linear" class="text-[#4FB3A2]"></iconify-icon> Manufacturing</span>
-            </div>
-            <div class="mt-4 pt-4 border-t border-[#1F3A5F]/5 w-fit mx-auto">
-                 <p class="text-[10px] text-[#5B6F82]/70 uppercase tracking-widest">Deep Expertise in</p>
-                 <div class="flex gap-4 justify-center mt-2 text-xs font-bold text-[#1F3A5F]">
-                    <span class="">ISO 9001</span>
-                    <span>ISO 13485</span>
-                    <span>MDR</span>
-                    <span>FDA</span>
-                 </div>
-            </div>
-        </div>
+        <div class="lg:px-8 text-center max-w-7xl mr-auto ml-auto pr-6 pl-6">
+  <p class="text-xs font-semibold text-[#5B6F82] uppercase tracking-widest mb-6">Scaling companies across</p>
+  <div class="flex flex-wrap text-sm font-medium text-[#1F3A5F]/80 gap-x-8 gap-y-4 justify-center">
+    <span class="flex items-center gap-2"><iconify-icon icon="solar:server-linear" class="text-[#4FB3A2]"></iconify-icon> SaaS</span>
+    <span class="text-[#1F3A5F]/20">•</span>
+    <span class="flex items-center gap-2"><iconify-icon icon="solar:card-linear" class="text-[#4FB3A2]"></iconify-icon> Fintech</span>
+    <span class="text-[#1F3A5F]/20">•</span>
+    <span class="flex items-center gap-2"><iconify-icon icon="solar:heart-pulse-linear" class="text-[#4FB3A2]" width="13" height="13" style="color: rgb(79, 179, 162);"></iconify-icon> MedTech</span>
+    <span class="text-[#1F3A5F]/20">•</span>
+    <span class="flex items-center gap-2"><iconify-icon icon="solar:ruler-angular-outline" class="text-[#4FB3A2]" width="13" height="13" style="color: rgb(79, 179, 162);"></iconify-icon> Manufacturing</span>
+  </div>
+  <div class="mt-4 pt-4 border-t border-[#1F3A5F]/5 w-fit mx-auto">
+    <p class="text-[10px] text-[#5B6F82]/70 uppercase tracking-widest">Deep Expertise in</p>
+    <div class="flex gap-4 justify-center mt-2 text-xs font-bold text-[#1F3A5F]">
+      <span class="">ISO 9001</span>
+      <span>ISO 13485</span>
+      <span>MDR</span>
+      <span class="">FDA</span>
+    </div>
+  </div>
+</div>
     </section>
 
-    <!-- Problem Statement -->
-    <section class="bg-[#F5F7FA] pt-24 pb-24" id="problem">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-                <div class="mb-12 lg:mb-0">
-                    <h2 class="lg:text-4xl text-3xl font-bold text-[#1F3A5F] tracking-tight mb-6">Build on what already works</h2>
+    <!-- Problem Statement / Cost of Inaction -->
+    <section class="bg-[#F5F7FA] pt-24 pb-24 relative" id="problem">
+        <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-start">
+                
+                <!-- Left Column: The Opportunity -->
+                <div class="flex flex-col justify-center lg:py-8">
+                    <div class="inline-flex items-center gap-2 mb-4">
+                        <div class="w-2 h-2 rounded-full bg-[#4FB3A2]"></div>
+                        <span class="uppercase text-xs font-semibold text-[#4FB3A2] tracking-wide">THE REALITY</span>
+                    </div>
+                    <h2 class="lg:text-4xl text-3xl font-semibold text-[#1F3A5F] tracking-tight mb-6">Build on what already works</h2>
                     <div class="space-y-6 text-lg text-[#5B6F82] leading-relaxed">
                         <p class="">The most effective companies do one thing exceptionally well: <span class="font-semibold text-[#1F3A5F]">they institutionalize their best decisions</span>.</p>
                         <p class="">By aligning teams, clarifying ownership, and embedding regulatory thinking early, they reduce friction and create systems that support growth rather than slow it down.</p>
                     </div>
+                    <div class="mt-8">
+                        <a href="#services" class="inline-flex items-center gap-2 text-[#4FB3A2] font-semibold text-sm hover:text-[#3EA090] transition-colors group">
+                            Explore our solutions
+                            <iconify-icon icon="solar:arrow-right-linear" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-white p-6 rounded-xl border border-[#D6A24C]/10 shadow-sm hover:border-[#D6A24C]/40 transition-colors group">
-                        <iconify-icon icon="solar:users-group-two-rounded-bold-duotone" class="text-[#D6A24C] text-3xl mb-3 group-hover:scale-110 transition-transform"></iconify-icon>
-                        <h3 class="text-[#1F3A5F] font-bold text-sm mb-1">High Talent Churn</h3>
-                        <p class="text-xs text-[#5B6F82]">Due to chaotic structures</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-[#D6A24C]/10 shadow-sm hover:border-[#D6A24C]/40 transition-colors group">
-                        <iconify-icon icon="solar:danger-triangle-bold-duotone" class="text-[#D6A24C] text-3xl mb-3 group-hover:scale-110 transition-transform"></iconify-icon>
-                        <h3 class="text-[#1F3A5F] font-bold text-sm mb-1">Regulatory Delays</h3>
-                        <p class="text-xs text-[#5B6F82]">Blocking market entry</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-[#D6A24C]/10 shadow-sm hover:border-[#D6A24C]/40 transition-colors group">
-                        <iconify-icon icon="solar:graph-down-bold-duotone" class="text-[#D6A24C] text-3xl mb-3 group-hover:scale-110 transition-transform"></iconify-icon>
-                        <h3 class="text-[#1F3A5F] font-bold text-sm mb-1">Revenue Bottlenecks</h3>
-                        <p class="text-xs text-[#5B6F82]">Process inefficiencies</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-[#D6A24C]/10 shadow-sm hover:border-[#D6A24C]/40 transition-colors group">
-                        <iconify-icon icon="solar:battery-charge-minimalistic-bold-duotone" class="text-[#D6A24C] text-3xl mb-3 group-hover:scale-110 transition-transform"></iconify-icon>
-                        <h3 class="text-[#1F3A5F] font-bold text-sm mb-1">Founder Burnout</h3>
-                        <p class="text-xs text-[#5B6F82]">Operational firefighting</p>
+                <!-- Right Column: Cost of Inaction (Delineated Section) -->
+                <div class="mt-16 lg:mt-0 relative">
+                    <!-- Distinct "Report" Style Card for Contrast -->
+                    <div class="bg-white rounded-2xl border border-[#D6A24C]/20 shadow-xl shadow-[#D6A24C]/5 overflow-hidden">
+                        <!-- Header for Delineation -->
+                        <div class="bg-[#D6A24C]/5 border-b border-[#D6A24C]/10 px-6 py-5 flex items-center justify-between">
+                            <div class="">
+                                <h3 class="text-[#1F3A5F] font-semibold text-lg tracking-tight">The Cost of Inaction</h3>
+                                <p class="text-xs text-[#5B6F82] mt-0.5">Operational debt accumulates silently.</p>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-[#D6A24C]/10 flex items-center justify-center shrink-0">
+                                <iconify-icon icon="solar:danger-triangle-linear" class="text-[#D6A24C] text-lg"></iconify-icon>
+                            </div>
+                        </div>
+
+                        <!-- The Grid (Preserved but styled within the container) -->
+                        <div class="p-6 grid sm:grid-cols-2 gap-x-6 gap-y-8">
+                            <!-- Item 1 -->
+                            <div class="group">
+                                <div class="flex items-center gap-2.5 mb-2">
+                                    <iconify-icon icon="solar:users-group-two-rounded-bold-duotone" class="text-[#D6A24C] text-xl shrink-0"></iconify-icon>
+                                    <h4 class="text-[#1F3A5F] font-semibold text-sm">High Talent Churn</h4>
+                                </div>
+                                <p class="text-xs text-[#5B6F82] leading-relaxed pl-8">A-players leave when they can't do their best work due to chaotic structures.</p>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="group">
+                                <div class="flex items-center gap-2.5 mb-2">
+                                    <iconify-icon icon="solar:shield-warning-bold-duotone" class="text-[#D6A24C] text-xl shrink-0"></iconify-icon>
+                                    <h4 class="text-[#1F3A5F] font-semibold text-sm">Regulatory Delays</h4>
+                                </div>
+                                <p class="text-xs text-[#5B6F82] leading-relaxed pl-8">Retrofitting compliance is costly and can block market entry for months.</p>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="group">
+                                <div class="flex items-center gap-2.5 mb-2">
+                                    <iconify-icon icon="solar:graph-down-bold-duotone" class="text-[#D6A24C] text-xl shrink-0"></iconify-icon>
+                                    <h4 class="text-[#1F3A5F] font-semibold text-sm">Revenue Bottlenecks</h4>
+                                </div>
+                                <p class="text-xs text-[#5B6F82] leading-relaxed pl-8">Deals stall because custom processes don't scale. Operations constrain sales.</p>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="group">
+                                <div class="flex items-center gap-2.5 mb-2">
+                                    <iconify-icon icon="solar:battery-charge-minimalistic-bold-duotone" class="text-[#D6A24C] text-xl shrink-0"></iconify-icon>
+                                    <h4 class="text-[#1F3A5F] font-semibold text-sm">Founder Burnout</h4>
+                                </div>
+                                <p class="text-xs text-[#5B6F82] leading-relaxed pl-8">Trapped in daily firefighting. The business cannot run without you.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Subtle footer in the card -->
+                        <div class="text-[10px] flex font-medium text-[#9CA3AF] bg-[#F9FAFB] border-[#F3F4F6] border-t pt-3 pr-6 pb-3 pl-6 items-center justify-between">
+                            <span class=""></span>
+                            <span class="text-[#D6A24C]"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -255,10 +285,10 @@ Core</span>
     </section>
 
     <!-- Principles Grid -->
-    <section class="py-20 bg-white border-y border-[#1F3A5F]/5">
+    <section class="border-y bg-white border-[#1F3A5F]/5 pt-20 pb-20">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16">
-                 <h2 class="text-2xl font-bold text-[#1F3A5F] tracking-tight">Our Principles</h2>
+                 <h2 class="text-2xl font-semibold text-[#1F3A5F] tracking-tight">Our Principles</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div class="group">
@@ -266,7 +296,7 @@ Core</span>
                         <div class="absolute inset-0 bg-[#4FB3A2]/10 clip-hex-flat transition-all group-hover:bg-[#4FB3A2] group-hover:scale-110 duration-300"></div>
                         <iconify-icon icon="solar:shield-check-linear" class="text-[#4FB3A2] text-xl relative z-10 group-hover:text-white transition-colors"></iconify-icon>
                     </div>
-                    <h3 class="text-[#1F3A5F] font-bold text-base mb-2">Prevention over firefighting</h3>
+                    <h3 class="text-[#1F3A5F] font-semibold text-base mb-2">Prevention over firefighting</h3>
                     <p class="text-[#5B6F82] text-sm leading-relaxed">Fix root causes. Stop solving the same problem twice.</p>
                 </div>
                 <div class="group">
@@ -274,7 +304,7 @@ Core</span>
                         <div class="absolute inset-0 bg-[#4FB3A2]/10 clip-hex-flat transition-all group-hover:bg-[#4FB3A2] group-hover:scale-110 duration-300"></div>
                         <iconify-icon icon="solar:widget-2-linear" class="text-[#4FB3A2] text-xl relative z-10 group-hover:text-white transition-colors"></iconify-icon>
                     </div>
-                    <h3 class="text-[#1F3A5F] font-bold text-base mb-2">Simple systems. Serious impact.</h3>
+                    <h3 class="text-[#1F3A5F] font-semibold text-base mb-2">Simple systems. Serious impact.</h3>
                     <p class="text-[#5B6F82] text-sm leading-relaxed">Complex systems break. Simple systems scale.</p>
                 </div>
                 <div class="group">
@@ -282,7 +312,7 @@ Core</span>
                         <div class="absolute inset-0 bg-[#4FB3A2]/10 clip-hex-flat transition-all group-hover:bg-[#4FB3A2] group-hover:scale-110 duration-300"></div>
                         <iconify-icon icon="solar:structure-linear" class="text-[#4FB3A2] text-xl relative z-10 group-hover:text-white transition-colors"></iconify-icon>
                     </div>
-                    <h3 class="text-[#1F3A5F] font-bold text-base mb-2">Systems over heroics</h3>
+                    <h3 class="text-[#1F3A5F] font-semibold text-base mb-2">Systems over heroics</h3>
                     <p class="text-[#5B6F82] text-sm leading-relaxed">Don't rely on weekend warriors. Build processes that work.</p>
                 </div>
                 <div class="group">
@@ -290,18 +320,18 @@ Core</span>
                         <div class="absolute inset-0 bg-[#4FB3A2]/10 clip-hex-flat transition-all group-hover:bg-[#4FB3A2] group-hover:scale-110 duration-300"></div>
                         <iconify-icon icon="solar:route-linear" class="text-[#4FB3A2] text-xl relative z-10 group-hover:text-white transition-colors"></iconify-icon>
                     </div>
-                    <h3 class="text-[#1F3A5F] font-bold text-base mb-2">Long-term thinking</h3>
-                    <p class="text-[#5B6F82] text-sm leading-relaxed">Infrastructure for the company you want to become.</p>
+                    <h3 class="text-[#1F3A5F] font-semibold text-base mb-2">Long-term thinking</h3>
+                    <p class="leading-relaxed text-sm text-[#5B6F82]">Infrastructure for the company you want to become.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-[#F5F7FA] relative">
+    <section class="bg-[#F5F7FA] pt-24 pb-24 relative" id="services">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="max-w-2xl mb-16">
-                <h2 class="text-3xl lg:text-4xl font-bold text-[#1F3A5F] tracking-tight mb-4">
+                <h2 class="lg:text-4xl text-3xl font-semibold text-[#1F3A5F] tracking-tight mb-4">
                     What we do
                 </h2>
                 <p class="text-lg text-[#5B6F82]">
@@ -310,67 +340,61 @@ Core</span>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Service 1 -->
                 <div class="group p-8 rounded-2xl bg-white border border-[#1F3A5F]/5 hover:border-[#4FB3A2] hover:shadow-xl hover:shadow-[#4FB3A2]/10 transition-all duration-300 flex flex-col">
-                    <div class="w-12 h-12 bg-[#F5F7FA] rounded-xl flex items-center justify-center text-[#1F3A5F] shadow-sm mb-6 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
+                    <div class="flex overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors text-[#1F3A5F] bg-[#F5F7FA] w-12 h-12 rounded-xl mb-6 relative shadow-sm items-center justify-center">
                         <iconify-icon icon="solar:sitemap-linear" class="text-2xl relative z-10"></iconify-icon>
-                    </div>
-                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Organizational Design</h3>
+                    <iconify-icon icon="solar:presentation-graph-outline" class="z-10 text-2xl relative" width="23" height="23" style="color: rgb(255, 255, 255)"></iconify-icon></div>
+                    <h3 class="text-lg font-semibold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Organizational Design</h3>
                     <p class="text-[#5B6F82] text-sm leading-relaxed flex-grow">
                         Defining clear roles and decision-making frameworks. We scale your org structure without chaos and eliminate "who owns this?" from your vocabulary.
                     </p>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="group p-8 rounded-2xl bg-white border border-[#1F3A5F]/5 hover:border-[#4FB3A2] hover:shadow-xl hover:shadow-[#4FB3A2]/10 transition-all duration-300 flex flex-col">
-                    <div class="w-12 h-12 bg-[#F5F7FA] rounded-xl flex items-center justify-center text-[#1F3A5F] shadow-sm mb-6 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
-                        <iconify-icon icon="solar:diagram-up-linear" class="text-2xl relative z-10"></iconify-icon>
+                    <div class="flex overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors text-[#1F3A5F] bg-[#F5F7FA] w-12 h-12 rounded-xl mb-6 relative shadow-sm items-center justify-center">
+                        <iconify-icon icon="solar:diagram-up-linear" class="z-10 text-2xl relative" width="23" height="23" style="color: rgb(255, 255, 255)"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Process Architecture</h3>
+                    <h3 class="text-lg font-semibold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Process Architecture</h3>
                     <p class="text-[#5B6F82] text-sm leading-relaxed flex-grow">
                         Mapping and optimizing business processes. We identify bottlenecks, eliminate waste, and design standard operating procedures (SOPs) for scalability.
                     </p>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="group p-8 rounded-2xl bg-white border border-[#1F3A5F]/5 hover:border-[#4FB3A2] hover:shadow-xl hover:shadow-[#4FB3A2]/10 transition-all duration-300 flex flex-col">
                     <div class="w-12 h-12 bg-[#F5F7FA] rounded-xl flex items-center justify-center text-[#1F3A5F] shadow-sm mb-6 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
                         <iconify-icon icon="solar:settings-linear" class="text-2xl relative z-10"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Operational Systems</h3>
+                    <h3 class="text-lg font-semibold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Operational Systems</h3>
                     <p class="text-[#5B6F82] text-sm leading-relaxed flex-grow">
                         Building the frameworks that allow you to scale. Quality systems, performance dashboards, and infrastructure that works without heroics.
                     </p>
                 </div>
 
-                <!-- Service 4 -->
                 <div class="group p-8 rounded-2xl bg-white border border-[#1F3A5F]/5 hover:border-[#4FB3A2] hover:shadow-xl hover:shadow-[#4FB3A2]/10 transition-all duration-300 flex flex-col">
                     <div class="w-12 h-12 bg-[#F5F7FA] rounded-xl flex items-center justify-center text-[#1F3A5F] shadow-sm mb-6 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
                         <iconify-icon icon="solar:user-speak-linear" class="text-2xl relative z-10"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Leadership Alignment</h3>
+                    <h3 class="text-lg font-semibold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Leadership Alignment</h3>
                     <p class="text-[#5B6F82] text-sm leading-relaxed flex-grow">
                         Bridging the gap between vision and operational reality. We ensure executive teams are aligned on strategy and decision-making frameworks.
                     </p>
                 </div>
 
-                <!-- Service 5 -->
                 <div class="group p-8 rounded-2xl bg-white border border-[#1F3A5F]/5 hover:border-[#4FB3A2] hover:shadow-xl hover:shadow-[#4FB3A2]/10 transition-all duration-300 flex flex-col">
                     <div class="w-12 h-12 bg-[#F5F7FA] rounded-xl flex items-center justify-center text-[#1F3A5F] shadow-sm mb-6 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
                         <iconify-icon icon="solar:clipboard-check-linear" class="text-2xl relative z-10"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Quality Systems (QMS)</h3>
+                    <h3 class="text-lg font-semibold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Quality Systems (QMS)</h3>
                     <p class="text-[#5B6F82] text-sm leading-relaxed flex-grow">
                         ISO 9001 and ISO 13485 implementation. We build lean, compliant quality management systems that pass audits without slowing down execution.
                     </p>
                 </div>
 
-                <!-- Service 6 -->
                 <div class="group p-8 rounded-2xl bg-white border border-[#1F3A5F]/5 hover:border-[#4FB3A2] hover:shadow-xl hover:shadow-[#4FB3A2]/10 transition-all duration-300 flex flex-col">
                     <div class="w-12 h-12 bg-[#F5F7FA] rounded-xl flex items-center justify-center text-[#1F3A5F] shadow-sm mb-6 relative overflow-hidden group-hover:bg-[#4FB3A2] group-hover:text-white transition-colors">
                         <iconify-icon icon="solar:shield-warning-linear" class="text-2xl relative z-10"></iconify-icon>
                     </div>
-                    <h3 class="text-lg font-bold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Regulatory Readiness</h3>
+                    <h3 class="text-lg font-semibold text-[#1F3A5F] mb-3 group-hover:text-[#4FB3A2] transition-colors">Regulatory Readiness</h3>
                     <p class="text-[#5B6F82] text-sm leading-relaxed flex-grow">
                         MDR, FDA, and risk management (ISO 14971). Preparing you for scrutiny and turning compliance from a risk factor into a competitive asset.
                     </p>
@@ -383,7 +407,7 @@ Core</span>
     <section id="methodology" class="py-24 bg-white border-y border-[#1F3A5F]/5">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20">
-                <h2 class="text-3xl lg:text-4xl font-bold text-[#1F3A5F] tracking-tight mb-4">
+                <h2 class="text-3xl lg:text-4xl font-semibold text-[#1F3A5F] tracking-tight mb-4">
                     How we work
                 </h2>
                 <p class="text-lg text-[#5B6F82] max-w-2xl mx-auto">
@@ -392,45 +416,40 @@ Core</span>
             </div>
 
             <div class="relative">
-                <!-- Connecting Line (Desktop) -->
                 <div class="hidden lg:block absolute top-7 left-[10%] right-[10%] h-[2px] bg-[#F5F7FA] z-0">
                     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#4FB3A2]/20 to-transparent"></div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 relative z-10">
-                    <!-- Step 1 -->
                     <div class="relative pt-4 lg:pt-0 group text-center">
                         <div class="w-14 h-14 mx-auto mb-6 relative flex items-center justify-center bg-white rounded-full border-2 border-[#1F3A5F]/10 group-hover:border-[#1F3A5F] transition-colors">
-                             <span class="text-[#1F3A5F] font-bold text-lg">01</span>
+                             <span class="text-[#1F3A5F] font-semibold text-lg">01</span>
                         </div>
-                        <h3 class="text-[#1F3A5F] font-bold text-lg mb-2">Discovery &amp; Diagnostic</h3>
+                        <h3 class="text-[#1F3A5F] font-semibold text-lg mb-2">Discovery &amp; Diagnostic</h3>
                         <p class="text-[#5B6F82] text-sm leading-relaxed px-4">Assessment, gap analysis, and risk identification.</p>
                     </div>
 
-                    <!-- Step 2 -->
                     <div class="relative pt-4 lg:pt-0 group text-center">
                         <div class="w-14 h-14 mx-auto mb-6 relative flex items-center justify-center bg-white rounded-full border-2 border-[#1F3A5F]/10 group-hover:border-[#4FB3A2] transition-colors">
-                             <span class="text-[#1F3A5F] font-bold text-lg group-hover:text-[#4FB3A2] transition-colors">02</span>
+                             <span class="text-[#1F3A5F] font-semibold text-lg group-hover:text-[#4FB3A2] transition-colors">02</span>
                         </div>
-                        <h3 class="text-[#1F3A5F] font-bold text-lg mb-2">Design &amp; Architecture</h3>
+                        <h3 class="text-[#1F3A5F] font-semibold text-lg mb-2">Design &amp; Architecture</h3>
                         <p class="text-[#5B6F82] text-sm leading-relaxed px-4">Process mapping, QMS framework, and compliance roadmap.</p>
                     </div>
 
-                    <!-- Step 3 -->
                     <div class="relative pt-4 lg:pt-0 group text-center">
                         <div class="w-14 h-14 mx-auto mb-6 relative flex items-center justify-center bg-white rounded-full border-2 border-[#1F3A5F]/10 group-hover:border-[#D6A24C] transition-colors">
-                             <span class="text-[#1F3A5F] font-bold text-lg group-hover:text-[#D6A24C] transition-colors">03</span>
+                             <span class="text-[#1F3A5F] font-semibold text-lg group-hover:text-[#D6A24C] transition-colors">03</span>
                         </div>
-                        <h3 class="text-[#1F3A5F] font-bold text-lg mb-2">Implementation</h3>
+                        <h3 class="text-[#1F3A5F] font-semibold text-lg mb-2">Implementation</h3>
                         <p class="text-[#5B6F82] text-sm leading-relaxed px-4">System rollout, team training, and change management.</p>
                     </div>
 
-                    <!-- Step 4 -->
                     <div class="relative pt-4 lg:pt-0 group text-center">
                         <div class="w-14 h-14 mx-auto mb-6 relative flex items-center justify-center bg-[#1F3A5F] rounded-full shadow-lg shadow-[#1F3A5F]/20">
                              <iconify-icon icon="solar:check-read-linear" class="text-white text-xl"></iconify-icon>
                         </div>
-                        <h3 class="text-[#1F3A5F] font-bold text-lg mb-2">Handover</h3>
+                        <h3 class="text-[#1F3A5F] font-semibold text-lg mb-2">Handover</h3>
                         <p class="text-[#5B6F82] text-sm leading-relaxed px-4">Audit preparation and knowledge transfer to your team.</p>
                     </div>
                 </div>
@@ -440,9 +459,7 @@ Core</span>
 
     <!-- Who We Serve / Why Us -->
     <section id="clients" class="py-24 bg-[#1F3A5F] text-white relative overflow-hidden">
-        <!-- Abstract Network Overlay (Matches Logo Concept) -->
         <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
-             <!-- A large scale version of the node connections -->
              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="90%" cy="10%" r="50" fill="none" stroke="#4FB3A2" stroke-width="2"></circle>
                 <line x1="90%" y1="10%" x2="70%" y2="50%" stroke="#4FB3A2" stroke-width="2"></line>
@@ -453,48 +470,46 @@ Core</span>
         
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-20">
-                <!-- Who We Serve -->
                 <div class="">
-                    <h2 class="text-3xl font-bold mb-8">Built for ambitious companies</h2>
+                    <h2 class="text-3xl font-semibold mb-8">Built for ambitious companies</h2>
                     <ul class="space-y-6">
                         <li class="flex gap-4 items-start">
                             <iconify-icon icon="solar:rocket-linear" class="text-[#4FB3A2] text-xl mt-1 shrink-0"></iconify-icon>
-                            <div>
-                                <h4 class="font-bold text-lg text-white">Scaling Startups (Series A to C)</h4>
+                            <div class="">
+                                <h4 class="font-semibold text-lg text-white">Scaling Startups (Series A to C)</h4>
                                 <p class="text-[#E6EBF0]/70 text-sm mt-1">Struggling with operational complexity and growing pains.</p>
                             </div>
                         </li>
                         <li class="flex gap-4 items-start">
                             <iconify-icon icon="solar:buildings-linear" class="text-[#4FB3A2] text-xl mt-1 shrink-0"></iconify-icon>
                             <div>
-                                <h4 class="font-bold text-lg text-white">Growth-Stage Companies</h4>
+                                <h4 class="font-semibold text-lg text-white">Growth-Stage Companies</h4>
                                 <p class="text-[#E6EBF0]/70 text-sm mt-1">Outgrowing founder-led operations and needing structure.</p>
                             </div>
                         </li>
                         <li class="flex gap-4 items-start">
                             <iconify-icon icon="solar:shield-check-linear" class="text-[#4FB3A2] text-xl mt-1 shrink-0"></iconify-icon>
-                            <div>
-                                <h4 class="font-bold text-lg text-white">Regulated Markets</h4>
+                            <div class="">
+                                <h4 class="font-semibold text-lg text-white">Regulated Markets</h4>
                                 <p class="text-[#E6EBF0]/70 text-sm mt-1">Companies entering MedTech, Pharma, or Finance.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Why Niavicta -->
                 <div class="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
-                    <h3 class="text-2xl font-bold mb-6 text-[#D6A24C]">Why Niavicta?</h3>
+                    <h3 class="text-2xl font-semibold mb-6 text-[#D6A24C]">Why Niavicta?</h3>
                     <div class="space-y-8">
                         <div class="">
-                            <h4 class="font-bold text-white mb-2">Systems Thinkers, Not Process Police</h4>
+                            <h4 class="font-semibold text-white mb-2">Systems Thinkers, Not Process Police</h4>
                             <p class="text-[#E6EBF0]/70 text-sm">We design elegant systems people actually use. Practical frameworks that balance structure with speed.</p>
                         </div>
                         <div class="">
-                            <h4 class="font-bold text-white mb-2">Implementation Partners</h4>
+                            <h4 class="font-semibold text-white mb-2">Implementation Partners</h4>
                             <p class="text-[#E6EBF0]/70 text-sm">We don't just write reports. We implement alongside you, ensuring your team owns the system.</p>
                         </div>
                         <div class="">
-                            <h4 class="font-bold text-white mb-2">Regulatory Expertise</h4>
+                            <h4 class="font-semibold text-white mb-2">Regulatory Expertise</h4>
                             <p class="text-[#E6EBF0]/70 text-sm">When you need it, we bring deep ISO 13485, MDR, and FDA expertise to turn compliance into an asset.</p>
                         </div>
                     </div>
@@ -503,16 +518,14 @@ Core</span>
         </div>
     </section>
 
-    <!-- CTA Section (No Form) -->
+    <!-- CTA Section -->
     <section class="bg-[#F5F7FA] pt-24 pb-24 relative" id="contact">
         <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-            <h2 class="lg:text-5xl text-4xl font-bold text-[#1F3A5F] tracking-tight mb-6">Win with intent. Keep winning <span class="text-[#4FB3A2]">by design</span>.</h2>
-            <p class="text-lg text-[#5B6F82] mb-12 leading-relaxed max-w-2xl mx-auto">
-                Whether you're scaling past 50 people, preparing for institutional funding, or entering regulated markets—we can help you build the infrastructure you need.
-            </p>
+            <h2 class="lg:text-5xl text-4xl font-semibold text-[#1F3A5F] tracking-tight mb-6">Win with intent. Keep winning <span class="text-[#4FB3A2]">by design</span>.</h2>
+            <p class="leading-relaxed text-lg text-[#5B6F82] max-w-2xl mr-auto mb-12 ml-auto">Whether you're scaling past 50 people, preparing for institutional funding, or entering regulated markets, we can help you build the infrastructure you need.</p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-6 items-center">
-                <a href="mailto:hello@niavicta.com" class="group flex items-center gap-3 bg-[#1F3A5F] text-white px-8 py-4 rounded-lg text-base font-bold hover:bg-[#4FB3A2] transition-colors shadow-xl shadow-[#1F3A5F]/20">
+                <a href="mailto:hello@niavicta.com" class="group flex items-center gap-3 bg-[#1F3A5F] text-white px-8 py-4 rounded-lg text-base font-semibold hover:bg-[#4FB3A2] transition-colors shadow-xl shadow-[#1F3A5F]/20">
                     <iconify-icon icon="solar:calendar-add-linear" class="text-xl"></iconify-icon>
                     Schedule a Consultation
                 </a>
@@ -536,7 +549,6 @@ Core</span>
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-center mb-12 items-start justify-between">
                 <div class="mb-8 md:mb-0">
-                    <!-- Logo in Footer -->
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-8 h-8 relative">
                              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
@@ -579,5 +591,5 @@ Core</span>
         </div>
     </footer>
 
-</body></html>
 
+</body></html>

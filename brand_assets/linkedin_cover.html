@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Niavicta LinkedIn Cover</title>
@@ -25,7 +26,6 @@
     align-items: center;
   }
 
-  /* Background texture grid */
   .bg-grid {
     position: absolute;
     inset: 0;
@@ -34,7 +34,6 @@
     z-index: 0;
   }
 
-  /* Teal glow top right */
   .glow-tr {
     position: absolute;
     top: -120px;
@@ -45,7 +44,6 @@
     z-index: 0;
   }
 
-  /* Subtle gold glow bottom left */
   .glow-bl {
     position: absolute;
     bottom: -120px;
@@ -56,7 +54,6 @@
     z-index: 0;
   }
 
-  /* Vertical divider line */
   .divider {
     position: absolute;
     left: 720px;
@@ -67,7 +64,6 @@
     z-index: 1;
   }
 
-  /* Network SVG decoration */
   .network-deco {
     position: absolute;
     right: 60px;
@@ -77,7 +73,6 @@
     opacity: 0.22;
   }
 
-  /* Left content */
   .left-content {
     position: relative;
     z-index: 2;
@@ -116,8 +111,9 @@
   }
 
   .headline {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 48px;
+    font-weight: 600;
     line-height: 1.1;
     color: #ffffff;
     margin-bottom: 16px;
@@ -126,7 +122,7 @@
 
   .headline .accent {
     color: #4FB3A2;
-    font-style: italic;
+    font-style: normal;
   }
 
   .tagline {
@@ -157,7 +153,6 @@
     background: rgba(79,179,162,0.5);
   }
 
-  /* Right content */
   .right-content {
     position: relative;
     z-index: 2;
@@ -220,7 +215,6 @@
     font-weight: 600;
   }
 
-  /* Horizontal rule accent */
   .h-rule {
     position: absolute;
     bottom: 50px;
@@ -231,7 +225,6 @@
     z-index: 1;
   }
 
-  /* Bottom tagline strip */
   .bottom-strip {
     position: absolute;
     bottom: 0;
@@ -242,7 +235,6 @@
     z-index: 3;
   }
 
-  /* Geometric accent top left */
   .geo-accent {
     position: absolute;
     top: -30px;
@@ -253,6 +245,7 @@
     border-radius: 50%;
     z-index: 0;
   }
+
   .geo-accent-2 {
     position: absolute;
     top: -10px;
@@ -265,10 +258,12 @@
   }
 </style>
 </head>
-<body class="">
+<body>
 <div class="cover">
-  <div class=""></div>
-  <div class="glow-tr text-justify right-1"></div>
+
+  <!-- FIX 1: Restored missing bg-grid div -->
+  <div class="bg-grid"></div>
+  <div class="glow-tr"></div>
   <div class="glow-bl"></div>
   <div class="geo-accent"></div>
   <div class="geo-accent-2"></div>
@@ -276,8 +271,21 @@
   <div class="h-rule"></div>
   <div class="bottom-strip"></div>
 
-  <!-- Large decorative network -->
-
+  <!-- FIX 2: Restored missing decorative network SVG -->
+  <svg class="network-deco" width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="160" y1="60" x2="80" y2="160" stroke="#4FB3A2" stroke-width="1.5" stroke-dasharray="5 5"/>
+    <line x1="160" y1="60" x2="240" y2="160" stroke="#4FB3A2" stroke-width="1.5" stroke-dasharray="5 5"/>
+    <line x1="80" y1="160" x2="160" y2="260" stroke="#4FB3A2" stroke-width="1.5" stroke-dasharray="5 5"/>
+    <line x1="240" y1="160" x2="160" y2="260" stroke="#4FB3A2" stroke-width="1.5" stroke-dasharray="5 5"/>
+    <line x1="80" y1="160" x2="30" y2="260" stroke="#4FB3A2" stroke-width="1" stroke-dasharray="4 6"/>
+    <line x1="240" y1="160" x2="290" y2="260" stroke="#4FB3A2" stroke-width="1" stroke-dasharray="4 6"/>
+    <circle cx="160" cy="60" r="14" fill="#4FB3A2" opacity="0.9"/>
+    <circle cx="80" cy="160" r="11" fill="#1F3A5F" stroke="#4FB3A2" stroke-width="1.5"/>
+    <circle cx="240" cy="160" r="11" fill="#1F3A5F" stroke="#4FB3A2" stroke-width="1.5"/>
+    <circle cx="30" cy="260" r="9" fill="#1F3A5F" stroke="#4FB3A2" stroke-width="1" opacity="0.7"/>
+    <circle cx="290" cy="260" r="9" fill="#1F3A5F" stroke="#4FB3A2" stroke-width="1" opacity="0.7"/>
+    <circle cx="160" cy="260" r="14" fill="#4FB3A2" opacity="0.9"/>
+  </svg>
 
   <!-- LEFT: Main message -->
   <div class="left-content">
@@ -285,8 +293,9 @@
       <div class="badge-dot"></div>
       <span class="badge-text">Operational Consulting</span>
     </div>
-    <div class="headline font-sans font-medium">
-      Win with intent.<br>Keep winning <span class="headline font-medium text-[#4FB3A2] font-sans">by design</span>.
+    <!-- FIX 3: Restored correct .accent class — removes broken Tailwind classes -->
+    <div class="headline">
+      Win with intent.<br>Keep winning <span class="accent">by design</span>.
     </div>
     <div class="tagline">We help ambitious, scaling companies build operational systems that work.</div>
     <div class="url-tag">niavicta.com</div>
@@ -294,59 +303,55 @@
 
   <!-- RIGHT: Logo + pillars -->
   <div class="right-content">
-  <div class="logo-area">
-  <!-- SVG logo matching the site -->
-  <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" width="52" height="52" class="">
-    <line x1="25" y1="15" x2="15" y2="28" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"></line>
-    <line x1="25" y1="15" x2="35" y2="28" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"></line>
-    <line x1="15" y1="28" x2="25" y2="40" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"></line>
-    <line x1="35" y1="28" x2="25" y2="40" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"></line>
-    <line x1="15" y1="28" x2="8" y2="40" stroke="#4FB3A2" stroke-width="2" opacity="0.35"></line>
-    <line x1="35" y1="28" x2="42" y2="40" stroke="#4FB3A2" stroke-width="2" opacity="0.35"></line>
-    <circle cx="25" cy="15" r="5" fill="#4FB3A2"></circle>
-    <circle cx="15" cy="28" r="4" fill="#2a4a72"></circle>
-    <circle cx="35" cy="28" r="4" fill="#2a4a72"></circle>
-    <circle cx="8" cy="40" r="3.5" fill="#2a4a72" opacity="0.75"></circle>
-    <circle cx="42" cy="40" r="3.5" fill="#2a4a72" opacity="0.75"></circle>
-    <circle cx="25" cy="40" r="5" fill="#4FB3A2"></circle>
-  </svg>
-  <span class="logo-wordmark">Niavicta</span>
-</div>
+    <div class="logo-area">
+      <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" width="52" height="52">
+        <line x1="25" y1="15" x2="15" y2="28" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"/>
+        <line x1="25" y1="15" x2="35" y2="28" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"/>
+        <line x1="15" y1="28" x2="25" y2="40" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"/>
+        <line x1="35" y1="28" x2="25" y2="40" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"/>
+        <line x1="15" y1="28" x2="8" y2="40" stroke="#4FB3A2" stroke-width="2" opacity="0.35"/>
+        <line x1="35" y1="28" x2="42" y2="40" stroke="#4FB3A2" stroke-width="2" opacity="0.35"/>
+        <circle cx="25" cy="15" r="5" fill="#4FB3A2"/>
+        <circle cx="15" cy="28" r="4" fill="#2a4a72"/>
+        <circle cx="35" cy="28" r="4" fill="#2a4a72"/>
+        <circle cx="8" cy="40" r="3.5" fill="#2a4a72" opacity="0.75"/>
+        <circle cx="42" cy="40" r="3.5" fill="#2a4a72" opacity="0.75"/>
+        <circle cx="25" cy="40" r="5" fill="#4FB3A2"/>
+      </svg>
+      <span class="logo-wordmark">Niavicta</span>
+    </div>
 
-  <div class="pillars">
-    <div class="pillar">
-      <div class="pillar-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="w-[16px] h-[16px]" data-icon-replaced="true" style="width: 16px; height: 16px; color: rgb(214, 162, 76)">
-          <rect x="3" y="3" width="7" height="7" class=""></rect>
-          <rect x="14" y="3" width="7" height="7" class=""></rect>
-          <rect x="3" y="14" width="7" height="7" class=""></rect>
-          <path d="M14 17.5h7M17.5 14v7"></path>
-        </svg>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+            <path d="M14 17.5h7M17.5 14v7"/>
+          </svg>
+        </div>
+        <div class="pillar-text"><span>Organizational Design</span> &amp; Process Architecture</div>
       </div>
-      <div class="pillar-text"><span class="">Organizational Design</span> &amp; Process Architecture</div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="w-[16px] h-[16px]" data-icon-replaced="true" style="width: 16px; height: 16px; color: rgb(0, 0, 0);">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" class=""></path>
-  </svg>
-</div>
-      <div class="pillar-text" style="font-weight: 400">
-        <span class="" style="font-weight: 500;">ISO 9001 · ISO 13485</span> · MDR · FDA · GDPR
-        <span style="font-weight: 400" class="">· EU AI ACT</span>
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="pillar-text"><span>ISO 9001 · ISO 13485</span> · MDR · FDA · GDPR · EU AI Act</div>
       </div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="w-[16px] h-[16px]" data-icon-replaced="true" style="width: 16px; height: 16px; color: rgb(0, 0, 0);">
-    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" class=""></polyline>
-  </svg>
-</div>
-      <div class="pillar-text"><span class="">Scalable Systems</span> for Series A–C &amp; beyond</div>
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div class="pillar-text"><span>Scalable Systems</span> for Series A–C &amp; beyond</div>
+      </div>
     </div>
   </div>
-</div>
 
 </div>
-
-</body></html>
+</body>
+</html>

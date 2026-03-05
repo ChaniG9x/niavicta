@@ -56,7 +56,7 @@
 
   .divider {
     position: absolute;
-    left: 720px;
+    left: 870px;
     top: 0;
     bottom: 0;
     width: 1px;
@@ -73,11 +73,12 @@
     opacity: 0.22;
   }
 
+  /* Shifted right to avoid profile picture overlap in bottom-left (~260px wide) */
   .left-content {
     position: relative;
     z-index: 2;
-    padding-left: 100px;
-    width: 680px;
+    padding-left: 290px;
+    width: 830px;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -218,7 +219,7 @@
   .h-rule {
     position: absolute;
     bottom: 50px;
-    left: 100px;
+    left: 290px;
     right: 100px;
     height: 1px;
     background: linear-gradient(to right, rgba(79,179,162,0.3), transparent);

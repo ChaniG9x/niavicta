@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niavicta LinkedIn Cover</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1584px;
+    height: 396px;
+    overflow: hidden;
+    font-family: 'DM Sans', sans-serif;
+    background: #F5F7FA;
+  }
+
+  .cover {
+    width: 1584px;
+    height: 396px;
+    background: #0e2240;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Background texture grid */
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(79,179,162,0.12) 1px, transparent 1px);
+    background-size: 36px 36px;
+    z-index: 0;
+  }
+
+  /* Teal glow top right */
+  .glow-tr {
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(79,179,162,0.18) 0%, transparent 65%);
+    z-index: 0;
+  }
+
+  /* Subtle gold glow bottom left */
+  .glow-bl {
+    position: absolute;
+    bottom: -120px;
+    left: 100px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(214,162,76,0.08) 0%, transparent 65%);
+    z-index: 0;
+  }
+
+  /* Vertical divider line */
+  .divider {
+    position: absolute;
+    left: 720px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(79,179,162,0.3) 30%, rgba(79,179,162,0.3) 70%, transparent);
+    z-index: 1;
+  }
+
+  /* Network SVG decoration */
+  .network-deco {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    opacity: 0.22;
+  }
+
+  /* Left content */
+  .left-content {
+    position: relative;
+    z-index: 2;
+    padding-left: 100px;
+    width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(79,179,162,0.12);
+    border: 1px solid rgba(79,179,162,0.25);
+    border-radius: 100px;
+    padding: 5px 14px 5px 10px;
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+
+  .badge-dot {
+    width: 7px;
+    height: 7px;
+    background: #4FB3A2;
+    border-radius: 50%;
+  }
+
+  .badge-text {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4FB3A2;
+  }
+
+  .headline {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .headline .accent {
+    color: #4FB3A2;
+    font-style: italic;
+  }
+
+  .tagline {
+    font-size: 13.5px;
+    color: rgba(230,235,240,0.65);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    max-width: 420px;
+    margin-bottom: 28px;
+  }
+
+  .url-tag {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: rgba(79,179,162,0.8);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .url-tag::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: rgba(79,179,162,0.5);
+  }
+
+  /* Right content */
+  .right-content {
+    position: relative;
+    z-index: 2;
+    padding-left: 80px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .logo-wordmark {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+
+  .pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .pillar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pillar-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(79,179,162,0.1);
+    border: 1px solid rgba(79,179,162,0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .pillar-text {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: rgba(230,235,240,0.8);
+    letter-spacing: 0.01em;
+  }
+
+  .pillar-text span {
+    color: #4FB3A2;
+    font-weight: 600;
+  }
+
+  /* Horizontal rule accent */
+  .h-rule {
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+    right: 100px;
+    height: 1px;
+    background: linear-gradient(to right, rgba(79,179,162,0.3), transparent);
+    z-index: 1;
+  }
+
+  /* Bottom tagline strip */
+  .bottom-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #4FB3A2, #1F3A5F 60%, #D6A24C);
+    z-index: 3;
+  }
+
+  /* Geometric accent top left */
+  .geo-accent {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(79,179,162,0.08);
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .geo-accent-2 {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 140px;
+    height: 140px;
+    border: 1px solid rgba(79,179,162,0.05);
+    border-radius: 50%;
+    z-index: 0;
+  }
+</style>
+</head>
+<body class="">
+<div class="cover">
+  <div class=""></div>
+  <div class="glow-tr text-justify right-1"></div>
+  <div class="glow-bl"></div>
+  <div class="geo-accent"></div>
+  <div class="geo-accent-2"></div>
+  <div class="divider"></div>
+  <div class="h-rule"></div>
+  <div class="bottom-strip"></div>
+
+  <!-- Large decorative network -->
+
+
+  <!-- LEFT: Main message -->
+  <div class="left-content">
+    <div class="badge">
+      <div class="badge-dot"></div>
+      <span class="badge-text">Operational Consulting</span>
+    </div>
+    <div class="headline font-sans font-medium">
+      Win with intent.<br>Keep winning <span class="headline font-medium text-[#4FB3A2] font-sans">by design</span>.
+    </div>
+    <div class="tagline">We help ambitious, scaling companies build operational systems that work.</div>
+    <div class="url-tag">niavicta.com</div>
+  </div>
+
+  <!-- RIGHT: Logo + pillars -->
+  <div class="right-content">
+  <div class="logo-area">
+  <!-- SVG logo matching the site -->
+  <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" width="52" height="52" class="">
+    <line x1="25" y1="15" x2="15" y2="28" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"></line>
+    <line x1="25" y1="15" x2="35" y2="28" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"></line>
+    <line x1="15" y1="28" x2="25" y2="40" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"></line>
+    <line x1="35" y1="28" x2="25" y2="40" stroke="#4FB3A2" stroke-width="2.5" opacity="0.6"></line>
+    <line x1="15" y1="28" x2="8" y2="40" stroke="#4FB3A2" stroke-width="2" opacity="0.35"></line>
+    <line x1="35" y1="28" x2="42" y2="40" stroke="#4FB3A2" stroke-width="2" opacity="0.35"></line>
+    <circle cx="25" cy="15" r="5" fill="#4FB3A2"></circle>
+    <circle cx="15" cy="28" r="4" fill="#2a4a72"></circle>
+    <circle cx="35" cy="28" r="4" fill="#2a4a72"></circle>
+    <circle cx="8" cy="40" r="3.5" fill="#2a4a72" opacity="0.75"></circle>
+    <circle cx="42" cy="40" r="3.5" fill="#2a4a72" opacity="0.75"></circle>
+    <circle cx="25" cy="40" r="5" fill="#4FB3A2"></circle>
+  </svg>
+  <span class="logo-wordmark">Niavicta</span>
+</div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="w-[16px] h-[16px]" data-icon-replaced="true" style="width: 16px; height: 16px; color: rgb(214, 162, 76)">
+          <rect x="3" y="3" width="7" height="7" class=""></rect>
+          <rect x="14" y="3" width="7" height="7" class=""></rect>
+          <rect x="3" y="14" width="7" height="7" class=""></rect>
+          <path d="M14 17.5h7M17.5 14v7"></path>
+        </svg>
+      </div>
+      <div class="pillar-text"><span class="">Organizational Design</span> &amp; Process Architecture</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="w-[16px] h-[16px]" data-icon-replaced="true" style="width: 16px; height: 16px; color: rgb(0, 0, 0);">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" class=""></path>
+  </svg>
+</div>
+      <div class="pillar-text" style="font-weight: 400">
+        <span class="" style="font-weight: 500;">ISO 9001 · ISO 13485</span> · MDR · FDA · GDPR
+        <span style="font-weight: 400" class="">· EU AI ACT</span>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="w-[16px] h-[16px]" data-icon-replaced="true" style="width: 16px; height: 16px; color: rgb(0, 0, 0);">
+    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" class=""></polyline>
+  </svg>
+</div>
+      <div class="pillar-text"><span class="">Scalable Systems</span> for Series A–C &amp; beyond</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body></html>

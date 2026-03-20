@@ -56,7 +56,7 @@
 
   .divider {
     position: absolute;
-    left: 870px;
+    left: 980px;
     top: 0;
     bottom: 0;
     width: 1px;
@@ -73,12 +73,12 @@
     opacity: 0.22;
   }
 
-  /* Shifted right to avoid profile picture overlap in bottom-left (~260px wide) */
+  /* Left content — pushed right to clear LinkedIn profile pic (sits bottom-left, ~300px wide) */
   .left-content {
     position: relative;
     z-index: 2;
-    padding-left: 290px;
-    width: 830px;
+    padding-left: 420px;
+    width: 1060px;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -92,7 +92,7 @@
     border: 1px solid rgba(79,179,162,0.25);
     border-radius: 100px;
     padding: 5px 14px 5px 10px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     width: fit-content;
   }
 
@@ -113,11 +113,11 @@
 
   .headline {
     font-family: 'DM Sans', sans-serif;
-    font-size: 48px;
+    font-size: 46px;
     font-weight: 600;
     line-height: 1.1;
     color: #ffffff;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     letter-spacing: -0.02em;
   }
 
@@ -132,8 +132,8 @@
     font-weight: 400;
     letter-spacing: 0.01em;
     line-height: 1.6;
-    max-width: 420px;
-    margin-bottom: 28px;
+    max-width: 400px;
+    margin-bottom: 24px;
   }
 
   .url-tag {
@@ -157,19 +157,20 @@
   .right-content {
     position: relative;
     z-index: 2;
-    padding-left: 80px;
+    padding-left: 60px;
+    padding-right: 60px;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 22px;
+    gap: 28px;
   }
 
   .logo-area {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 
   .logo-wordmark {
@@ -183,18 +184,18 @@
   .pillars {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 18px;
   }
 
   .pillar {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
   }
 
   .pillar-icon {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     background: rgba(79,179,162,0.1);
     border: 1px solid rgba(79,179,162,0.2);
     border-radius: 8px;
@@ -205,10 +206,11 @@
   }
 
   .pillar-text {
-    font-size: 12.5px;
+    font-size: 13px;
     font-weight: 500;
     color: rgba(230,235,240,0.8);
     letter-spacing: 0.01em;
+    line-height: 1.4;
   }
 
   .pillar-text span {
@@ -219,8 +221,8 @@
   .h-rule {
     position: absolute;
     bottom: 50px;
-    left: 290px;
-    right: 100px;
+    left: 420px;
+    right: 60px;
     height: 1px;
     background: linear-gradient(to right, rgba(79,179,162,0.3), transparent);
     z-index: 1;
@@ -262,7 +264,6 @@
 <body>
 <div class="cover">
 
-  <!-- FIX 1: Restored missing bg-grid div -->
   <div class="bg-grid"></div>
   <div class="glow-tr"></div>
   <div class="glow-bl"></div>
@@ -272,15 +273,12 @@
   <div class="h-rule"></div>
   <div class="bottom-strip"></div>
 
-
-
   <!-- LEFT: Main message -->
   <div class="left-content">
     <div class="badge">
       <div class="badge-dot"></div>
       <span class="badge-text">Operational Consulting</span>
     </div>
-    <!-- FIX 3: Restored correct .accent class — removes broken Tailwind classes -->
     <div class="headline">
       Win with intent.<br>Keep winning <span class="accent">by design</span>.
     </div>
@@ -288,7 +286,7 @@
     <div class="url-tag">niavicta.com</div>
   </div>
 
-  <!-- RIGHT: Logo + pillars -->
+  <!-- RIGHT: Logo + 2 pillars -->
   <div class="right-content">
     <div class="logo-area">
       <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" width="52" height="52">
@@ -311,7 +309,7 @@
     <div class="pillars">
       <div class="pillar">
         <div class="pillar-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7"/>
             <rect x="14" y="3" width="7" height="7"/>
             <rect x="3" y="14" width="7" height="7"/>
@@ -322,15 +320,7 @@
       </div>
       <div class="pillar">
         <div class="pillar-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        <div class="pillar-text"><span>ISO 9001 · ISO 13485</span> · MDR · FDA · GDPR · EU AI Act</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4FB3A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
           </svg>
         </div>

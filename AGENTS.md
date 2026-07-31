@@ -22,6 +22,29 @@ When a page or blog post needs a photo or diagram:
 To add a new image: drop it in `dirs/img/`, run `python build-image-bank.py`,
 then fill in the new entry's `description`, `tags`, `use`, and `alt`.
 
+### Do not reuse the same photo everywhere — check the counts
+
+The bank is large and most of it sits unused, while a handful of images kept
+turning up on page after page. Before you pick an image, and again before you
+push, run:
+
+```bash
+python check-image-usage.py          # report; --strict to fail on overuse
+```
+
+It counts real `src` / `srcset` / CSS `url()` references across every page, and
+prints four things: coverage (how much of the bank is in use), any image on more
+than two pages, the unused images with their descriptions, and anything
+referenced but missing from the bank.
+
+- **Shop from the unused list first.** That section exists so you can pick a
+  fresh image instead of reaching for the familiar one.
+- **Two pages is the soft ceiling** for a photo. Go past it only deliberately,
+  and say why. Author portraits under `dirs/img/team/` are exempt: every post
+  carries its author's face, that is the pattern.
+- If nothing in the bank fits, say the piece needs a new image and describe the
+  shot. Do not force a weak match, and do not settle for the overused one.
+
 ## Publishing or editing a blog post — check sync before you push
 
 **The vault draft is the source of truth for the words.** Chani edits the
@@ -39,6 +62,9 @@ It pairs each vault draft to its page via the draft's `website-path:`
 frontmatter field, compares the `## Draft` body against the page's
 `<div class="prose article">` paragraphs, and exits non-zero on any drift,
 naming the paragraph and showing where the wording diverges.
+
+Run `python check-image-usage.py` alongside it, so a new post does not quietly
+put a third or fourth copy of the same photo on the site.
 
 - **Exit 0** — every published post matches its draft. Safe to push.
 - **Exit 1** — reconcile first. Take the vault draft's wording as correct unless
